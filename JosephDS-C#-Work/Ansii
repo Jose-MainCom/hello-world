@@ -1,0 +1,22 @@
+using System;
+    class Ascii
+{ 
+            static void Main()
+        
+        {
+            Console.Write("Enter a character:");
+
+
+            string str = Console.ReadLine();
+
+
+            char mychar = str[0];
+
+
+            int myascii = (int)mychar;
+
+            Console.WriteLine("Ascii value of {0} = {1}", mychar, myascii);
+
+            Console.ReadLine();
+        }
+    }
