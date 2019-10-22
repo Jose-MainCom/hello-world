@@ -1,0 +1,95 @@
+// Ask user to input a month number 1, or 2, or 3 for (Jan, Feb, and Mar).
+// Then check how many days each month has (say 31, 29, 30 days for each).
+// Print the month and the number of days to screen.
+// Finish the rest of exercise on your own and include all the months of the year.
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        while (true)
+        { 
+            string monthNumber;
+
+            Console.Write("Please enter a month number (1 to 12): ");
+            monthNumber = Console.ReadLine();
+
+            string month = "";
+            int daysOfTheMonth = 0;
+
+            switch (monthNumber)  //code here)
+            {
+                case "1":
+                    month = "January";
+                    daysOfTheMonth = 31;
+                    break;
+
+                case "2":
+                    month = "February";
+                    daysOfTheMonth = 28;
+                    break;
+
+                case "3":
+                    month = "March";
+                    daysOfTheMonth = 31;
+                    break;
+
+                case "4":
+                    month = "April";
+                    daysOfTheMonth = 30;
+                    break;
+
+                case "5":
+                    month = "May";
+                    daysOfTheMonth = 31;
+                    break;
+
+                case "6":
+                    month = "June";
+                    daysOfTheMonth = 30;
+                    break;
+
+                case "7":
+                    month = "July";
+                    daysOfTheMonth = 31;
+                    break;
+
+                case "8":
+                    month = "August";
+                    daysOfTheMonth = 31;
+                    break;
+
+                case "9":
+                    month = "September";
+                    daysOfTheMonth = 30;
+                    break;
+
+                case "10":
+                    month = "October";
+                    daysOfTheMonth = 31;
+                    break;
+
+                case "11":
+                    month = "November";
+                    daysOfTheMonth = 30;
+                    break;
+
+                case "12":
+                    month = "December";
+                    daysOfTheMonth = 31;
+                    break;
+
+
+                    // continue the code up to case "12", December
+                default:
+                    Console.WriteLine("This is not a valid month.");
+                    break;
+            }
+
+            Console.WriteLine("The month {0} has {1} days", month, daysOfTheMonth);
+            Console.ReadLine();
+        }
+    }
+}
