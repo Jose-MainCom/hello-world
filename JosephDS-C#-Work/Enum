@@ -120,6 +120,10 @@ class Program
                     nDays = (int)eMonthDays.December;
                     break;
 
+                default:
+                    eName = eMonthNames.December;
+                    nDays = (int)eMonthDays.December;
+                    break;
 
                     // TO DO
 
