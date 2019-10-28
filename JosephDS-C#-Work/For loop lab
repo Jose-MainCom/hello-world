@@ -10,7 +10,7 @@ class Average
         float sum = 0;
         // define a float for average
         float average = 0;
-
+        
         // sequentially add the numbers up from 0 to 10
 
         for (int x = 0; x <= 10; x++)
@@ -18,12 +18,12 @@ class Average
             //ask the user to enter a number
             Console.WriteLine("Enter a number: {0}", x);
 
-            float num = float.Parse(Console.ReadLine());
+            float number = float.Parse(Console.ReadLine());
 
 
 
             //add the given number to the previous
-            sum += num;
+            sum = sum + number;
         }
 
         // finding the average
