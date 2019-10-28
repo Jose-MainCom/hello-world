@@ -46,12 +46,15 @@ class Program
         while (true)
         {
             //TO DO
-            eMonthNames eName;
+            
+
             Console.Write("Please enter a Month Number: ");
             string monthNumber = Console.ReadLine();
 
-            int nDays = 0;
             eMonthNames eName;
+            int nDays = 0;
+            
+           
 
             switch (monthNumber)
             {
@@ -101,26 +104,29 @@ class Program
                     eName = eMonthNames.September;
                     nDays = (int)eMonthDays.September;
                     break;
+
                 case "10":
                     eName = eMonthNames.October;
                     nDays = (int)eMonthDays.October;
                     break;
+
                 case "11":
                     eName = eMonthNames.November;
                     nDays = (int)eMonthDays.November;
                     break;
+
                 case "12":
                     eName = eMonthNames.December;
                     nDays = (int)eMonthDays.December;
                     break;
-                
 
-                // TO DO
 
-                              
+                    // TO DO
+
+
             }
             Console.WriteLine("Month {0} has {1} days\n\n", eName, nDays);
-            Console.ReadLine()
+            Console.ReadLine();
         }
     }
 }
