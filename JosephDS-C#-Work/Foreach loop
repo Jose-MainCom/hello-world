@@ -1,0 +1,37 @@
+// Create an array of numbers and find the max and min values of your array
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+
+        // start with the given array
+        int[] numbers = new int[] { 0, 2, 5, 100, -1, 4, 8, -5 };
+
+        int Min;
+        int Max;
+
+        Max = numbers[0];
+        Min = numbers[0];
+        // define the max and min
+
+        foreach (int x in numbers)
+        {
+            if (x<Min)
+            {
+                Min = x;// code to find the min
+            }
+            if (x>Max)// code)
+               {
+                Max = x;// code to find the max
+            }
+        }
+
+        Console.WriteLine("The Minimum value is {0}", Min);
+        Console.WriteLine("The Maximum value is {0}", Max);
+
+        Console.ReadLine();
+    }
+}
