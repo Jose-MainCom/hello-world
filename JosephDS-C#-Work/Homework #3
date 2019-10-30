@@ -1,0 +1,28 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+
+        int SecPerDay = 86400; // Seconds per day
+        int SecPerHour = 3600; // Seconds per hour
+        int SecPermin = 60;  // Seconds per minute
+        {
+
+
+            Console.Write("Enter the total number of seconds:");
+
+            string input;
+            
+            input = Console.ReadLine();
+            
+            double seconds;
+            
+            seconds = double.Parse(input);
+
+            Console.Write("{0} days, {1} hours, {2} minutes, and {3} seconds",  );
+        }
+        Console.ReadLine();
+    }
+}
