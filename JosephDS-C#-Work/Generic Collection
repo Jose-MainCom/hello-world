@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+
+struct Contact
+{
+    public String Name;
+    public String PhoneNumber;
+}
+
+class Program
+{
+    static void Main()
+    {
+        // TODO: Create a list of Contact
+        var contacts = new List<Contact>();
+
+        // TODO: Add contacts to the list
+        contacts.Add(new Contact { Name = "John Doe", PhoneNumber = "555-5555" });
+        contacts.Add(new Contact { Name = "Jason Charley", PhoneNumber = "878-9883" });
+
+        // TODO: Display the Name and PhoneNumber of all the contacts
+
+        var newContact = contacts[1];
+
+        foreach (var contact in contacts)
+        {
+            Console.WriteLine("Name is: {0}    Phone Number is: {1}", contact.Name, contact.PhoneNumber);
+        }
+
+        Console.ReadLine();
+    }
+}
