@@ -63,6 +63,7 @@ class RPN // design RPN
                     var number1 = stack.Pop();
                     var number2 = stack.Pop();
                     var difference = number2 - number1;
+                    stack.Push(difference);
                     break;
                 }
             default: // when user enters a number
