@@ -1,0 +1,30 @@
+// Write a program that calculates the average of numbers given by the user.
+
+using System;
+
+
+class Average
+{
+    
+    static void Main()
+    {
+        float average;
+        float sum = 0.0f;
+
+        for (int x = 1; (x <= 10); x++)
+        {
+            Console.Write("Please enter a number {0} of 10: ", x);
+            float input = float.Parse(Console.ReadLine());
+
+            sum += input;
+
+        }
+
+        average = sum / 10;
+        Console.WriteLine("The sum of the given numbers is {0}", sum);
+        Console.WriteLine("The average is {0}", average);
+        Console.ReadLine();
+        // finding the average
+        
+    }
+}
