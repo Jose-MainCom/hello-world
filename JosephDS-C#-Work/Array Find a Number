@@ -1,0 +1,43 @@
+using System;
+
+class Labwork
+{
+    static void Main()
+    {
+        while (true)
+        {
+            int[] numbers = new int[] { 10, 15, 20, 25, 30, 35 };
+
+            Console.Write("Enter a number:");
+            string str = Console.ReadLine();
+
+            // TODO: convert input string into a number
+            int myNumber = int.Parse(str);
+
+            // TODO: set a boolean flag named "found"
+            bool found = false;
+
+            // use for to look for the number
+            for (int x = 1; (x < numbers.Length); x++)
+            {
+                // TODO: if number is found set found flag to true and exit the loop
+                if (myNumber == numbers[x])
+                {
+                    found = true;
+                }
+            }
+                if (found)
+                {
+                    Console.WriteLine("You found the number!\n");
+                }
+                else
+                {
+                    Console.WriteLine("You did not find the number\n");
+                }
+            
+
+           
+            Console.ReadLine(); // Pause to see the results
+        }
+    }
+}
