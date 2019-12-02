@@ -29,6 +29,9 @@ class Program
                         Console.Write("Type of pet :");
                         var typeOfPet = Console.ReadLine();
 
+                        pets[numberOfPets].Name = name;
+                        pets[numberOfPets].TypeOfPet = typeOfPet;
+
                         // TODO: Always add the pet at the end of the array
 
                         numberOfPets++;
@@ -59,6 +62,8 @@ class Program
                         for (var index = indexToDelete - 1; index < numberOfPets; index++)
                         {
                             // TODO: Just copy the pet from the next index into the current index
+                            pets[index].Name = pets[index + 1].Name;
+                            pets[index].TypeOfPet = pets[index + 1].TypeOfPet;
                         }
 
                         // We have one less pet
@@ -73,6 +78,7 @@ class Program
                         if (numberOfPets == 0)
                         {
                             Console.WriteLine("No pets");
+                            break;
                         }
 
                         for (int index = 0; index < numberOfPets; index++)
@@ -82,7 +88,53 @@ class Program
 
                         break;
                     }
-                default:
+                case "C":
+                case "c":
+                    {
+                        if (numberOfPets == 0)
+                        {
+                            Console.WriteLine("No pets");
+                            break;
+                        }
+                        for (var index = 0; index < numberOfPets; index++)
+                        {
+                            Console.WriteLine("{0}. {1,-10} {2}", index + 1, pets[index].Name, pets[index].TypeOfPet);
+                        }
+
+                        Console.Write("Which pet to change (1-{0})", numberOfPets);
+
+                        var petNumberToDelete = Console.ReadLine();
+                        var indexToDelete = int.Parse(petNumberToDelete);
+
+                        for (var index = indexToDelete - 1; index < numberOfPets; index++)
+                        {
+                            // TODO: Just copy the pet from the next index into the current index
+                            pets[index].Name = pets[index + 1].Name;
+                            pets[index].TypeOfPet = pets[index + 1].TypeOfPet;
+                        }
+                        {
+                            numberOfPets--;
+                        }
+
+                        {
+                            Console.Write("Name :");
+                            var name = Console.ReadLine();
+
+                            Console.Write("Type of pet :");
+                            var typeOfPet = Console.ReadLine();
+
+                            pets[numberOfPets].Name = name;
+                            pets[numberOfPets].TypeOfPet = typeOfPet;
+
+                            // TODO: Always add the pet at the end of the array
+
+                            numberOfPets++;
+                            break;
+                        }
+
+                        
+                    }
+                        default:
                     {
                         Console.WriteLine("Invalid option [{0}]", choice);
                         break;
