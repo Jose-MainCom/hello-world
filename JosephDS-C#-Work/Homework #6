@@ -117,10 +117,10 @@ class Program
                         }
 
                         {
-                            Console.Write("Name :");
+                            Console.Write("New name :");
                             var name = Console.ReadLine();
 
-                            Console.Write("Type of pet :");
+                            Console.Write("New type of pet :");
                             var typeOfPet = Console.ReadLine();
 
                             pets[numberOfPets].Name = name;
@@ -132,9 +132,9 @@ class Program
                             break;
                         }
 
-                        
+
                     }
-                        default:
+                default:
                     {
                         Console.WriteLine("Invalid option [{0}]", choice);
                         break;
