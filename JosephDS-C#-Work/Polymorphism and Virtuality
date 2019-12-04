@@ -1,0 +1,101 @@
+using System;
+
+class Shape
+{
+    protected string Name;
+
+    public Shape(string name)
+    {
+        Name = name;
+    }
+    public virtual void Print()
+    {
+        Console.WriteLine(Name);
+    }
+    public virtual float Area()
+    {
+        return 0.0f;
+    }
+}
+
+class Circle : Shape
+{
+    private float radius;
+
+    public Circle(string name, float r) : base(name)
+    {
+        radius = r;
+    }
+    public override void Print()
+    {
+        base.Print();
+        Console.WriteLine("Radius = {0}", radius);
+    }
+    public override float Area()
+    {
+        // return pi*r^2
+        return 3.14f * radius * radius;
+    }
+}
+
+class Square : Shape
+{
+    private float edgeLength;
+
+    public Square(string name, float edgeLen) : base(name)
+    {
+        edgeLength = edgeLen;
+    }
+    public override void Print()
+    {
+        base.Print();
+        Console.WriteLine("Edge length = {0}", edgeLength);
+    }
+
+    public override float Area()
+    {
+        // return length*width
+        return edgeLength * edgeLength;
+    }
+}
+
+class Program
+{
+
+    static void Main()
+    {
+        var cSmallBall = new Circle("mini", 1.0f);
+        var cBeachBall = new Circle("plastic", 24.0f);
+        var cPlanetoid = new Circle("moon", 24000.0f);
+
+        var sCrystal = new Square("carbon", 0.002f);
+        var sIce = new Square("party", 1.0f);
+        var sBox = new Square("cardboard", 16.0f);
+
+        var shapes = new Shape[] {
+                                    cSmallBall,
+                                    cBeachBall,
+                                    cPlanetoid,
+                                    sCrystal,
+                                    sIce,
+                                    sBox
+                                };
+
+        Console.WriteLine("Printed individually-----------------------------");
+        cSmallBall.Print();
+        cBeachBall.Print();
+        cPlanetoid.Print();
+        sCrystal.Print();
+        sIce.Print();
+        sBox.Print();
+
+        Console.WriteLine("Printed by array-----------------------------");
+        foreach (Shape s in shapes)
+        {
+            s.Print();
+            Console.WriteLine("Area is {0}", s.Area());
+        }
+
+        Console.ReadLine();
+    }
+}
