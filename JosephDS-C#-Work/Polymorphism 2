@@ -24,9 +24,9 @@ class Check : Transaction
     public override void Print()
     {
         Console.WriteLine("-Check-");
-        Console.WriteLine("Amount : {0}", Amount);
-        Console.WriteLine("Description : {0}", Description);
-        Console.WriteLine("Check Number: {0}", CheckNumber);
+        Console.WriteLine("Amount         : {0}", Amount);
+        Console.WriteLine("Description    : {0}", Description);
+        Console.WriteLine("Check Number   : {0}", CheckNumber);
         Console.WriteLine("Payee : {0}", Payee);
     }
 }
@@ -46,6 +46,13 @@ class Deposit : Transaction
 {
     // TODO
     public string From;
+    public override void Print()
+    {
+        Console.WriteLine("-Deposit-");
+        Console.WriteLine("Amount      : {0}", Amount);
+        Console.WriteLine("Description : {0}", Description);
+
+    }
 }
 
 class Program
