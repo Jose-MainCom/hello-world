@@ -49,6 +49,7 @@ class Deposit : Transaction
     public override void Print()
     {
         Console.WriteLine("-Deposit-");
+        Console.WriteLine("From        :{0}", From);
         Console.WriteLine("Amount      : {0}", Amount);
         Console.WriteLine("Description : {0}", Description);
 
