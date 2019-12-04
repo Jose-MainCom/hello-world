@@ -8,9 +8,7 @@ class Transaction
 
     public virtual void Print()
     {
-        Console.WriteLine("-Transction-");
-        Console.WriteLine("Amount : {0}", Amount);
-        Console.WriteLine("Description : {0}", Description);
+        Console.WriteLine("Amount   :{0:C}", Amount);
     }
 }
 
@@ -24,7 +22,7 @@ class Check : Transaction
     public override void Print()
     {
         Console.WriteLine("-Check-");
-        Console.WriteLine("Amount         : {0}", Amount);
+        Console.WriteLine("Amount         : {0:C}", Amount);
         Console.WriteLine("Description    : {0}", Description);
         Console.WriteLine("Check Number   : {0}", CheckNumber);
         Console.WriteLine("Payee : {0}", Payee);
@@ -36,7 +34,7 @@ class Withdrawal : Transaction
 public override void Print()
 {
     Console.WriteLine("-Withdrawal-");
-    Console.WriteLine("Amount      : {0}", Amount);
+    Console.WriteLine("Amount      : {0:C}", Amount);
     Console.WriteLine("Description : {0}", Description);
 }
 
@@ -50,7 +48,7 @@ class Deposit : Transaction
     {
         Console.WriteLine("-Deposit-");
         Console.WriteLine("From        :{0}", From);
-        Console.WriteLine("Amount      : {0}", Amount);
+        Console.WriteLine("Amount      : {0:C}", Amount);
         Console.WriteLine("Description : {0}", Description);
 
     }
