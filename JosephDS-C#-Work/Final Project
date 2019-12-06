@@ -21,11 +21,6 @@ class Program
     public static void Main()
     {
         // use an interger to keep track of the count of items in your inventory 
-        for (int counter = 0; counter < 101; counter++)
-        {
-            Console.WriteLine("The total number of items in inventory total {0}", counter);
-        }
-
         // create an array of your ItemData struct
         var countOfItems = 0;
         var itemData = new ItemData[100];
@@ -34,7 +29,10 @@ class Program
         // use a never ending loop that shows the user what options they can select 
         while (true)
         {
-            Console.Write("Please select an option: 1.) Add an item 2.) Change an item 3.) Delete an item 4.) List all items 5.) Quit");
+            {
+                //for (int x = 0; x < countOfItems; x++) ;
+            }
+            Console.Write("Please select an option: 1.) Add an item 2.) Change an item 3.) Delete an item 4.) List all items 5.) Quit ");
 
             // as long as no one Quits, continue the inventory update
 
@@ -52,23 +50,24 @@ class Program
             {
                 case 1: // add an item to the list if this option is selected
                     {
-                        Console.Write("Item number :");
+                        Console.Write("Item number: ");
                         var itemNumber = Console.ReadLine();
 
-                        Console.Write("Description :");
+                        Console.Write("Description: ");
                         var description = Console.ReadLine();
 
-                        Console.Write("Price per item :");
+                        Console.Write("Price per item: ");
                         var pricePerItem = Console.ReadLine();
 
-                        Console.Write("Quantity on hand :");
+                        Console.Write("Quantity on hand: ");
                         var quantityOnHand = Console.ReadLine();
 
-                        Console.Write("Our cost per item :");
+                        Console.Write("Our cost per item: ");
                         var costPerItem = Console.ReadLine();
 
-                        Console.Write("Value of item :");
+                        Console.Write("Value of item: ");
                         var valueOfItem = Console.ReadLine();
+
 
                         itemData[countOfItems].ItemNumber = int.Parse(itemNumber);
                         itemData[countOfItems].Description = description;
@@ -103,7 +102,7 @@ class Program
                         if (!fFound) // and if not found
                         {
                             Console.WriteLine("Item {0} not found", changeItemNumber);
-                            
+
                         }
                         break;
                     }
@@ -118,50 +117,84 @@ class Program
                         }
                         for (var index = 0; index < countOfItems; index++)
                         {
-                            
+                            Console.WriteLine("Index  Item#  ItemID  Description           Price  QOH  Cost  Value");
+                            Console.WriteLine("------ -----  ------  --------------------  -----  ---  ----  -----");
+                            Console.WriteLine("{0} {1,5}  {2,6}  {3,-20}  {4,5:C}  {5,3}  {6,4:C}  {7,5:C}",
+                                index + 1, itemData[index].ItemNumber, countOfItems, itemData[index].Description,
+                                itemData[index].PricePerItem, itemData[index].QuantityOnHand,
+                                itemData[index].OurCostPerItem, itemData[index].ValueOfItem);
+                        }
+                        Console.Write("Please enter the Index number for the item you wish to delete (1-{0}), countOfItems");
+
+                        var itemNumberToDelete = Console.ReadLine();
+                        var indexToDelete = int.Parse(itemNumberToDelete);
+                        bool deleted = false;
+                        for (var index = indexToDelete - 1; index < indexToDelete; index++)
+                        {
                             itemData[index].ItemNumber = itemData[index + 1].ItemNumber;
                             itemData[index].Description = itemData[index + 1].Description;
                             itemData[index].PricePerItem = itemData[index + 1].PricePerItem;
                             itemData[index].QuantityOnHand = itemData[index + 1].QuantityOnHand;
                             itemData[index].OurCostPerItem = itemData[index + 1].OurCostPerItem;
                             itemData[index].ValueOfItem = itemData[index + 1].ValueOfItem;
+
                         }
-                      
+
+                        countOfItems--;
+
+                        if (deleted) // hint the user that you deleted the requested item
                         {
-                            Console.Write("Please enter an item ID No:");
-                            string input = Console.ReadLine();
-                            int deleteItemNumber = int.Parse(input);
-                            bool deleted = false;
+                            Console.WriteLine("Item deleted");
+
                         }
-                            for (int x = 0; x < countOfItems; x++)
-                            {
-                                if (itemData[x].ItemNumber == deleteItemNumber)
-                                {
-                                    deleted = true;
-                                    // delete the item if you found it
-                                    // reset the count to show a new count for your list 
-                                    //(Note: your list is now reduced by one item)
-                                for (var index = deleteItemNumber - 1; index < )     
-                                countOfItems--;
-                                    break;
-                                }
-                            }
+                        else // if did not find it, hint the user that you did not find it in your list
+                        {
+                            Console.WriteLine("Item {0} not found", itemNumberToDelete);
 
-                            if (deleted) // hint the user that you deleted the requested item
-                                {
-                                Console.WriteLine("Item deleted");
+                        }
+                        break;
+                        //itemData[index].ItemNumber = itemData[index + 1].ItemNumber;
+                        //itemData[index].Description = itemData[index + 1].Description;
+                        //itemData[index].PricePerItem = itemData[index + 1].PricePerItem;
+                        //itemData[index].QuantityOnHand = itemData[index + 1].QuantityOnHand;
+                        //itemData[index].OurCostPerItem = itemData[index + 1].OurCostPerItem;
+                        //itemData[index].ValueOfItem = itemData[index + 1].ValueOfItem;
+                    }
 
-                                }
-                            else // if did not find it, hint the user that you did not find it in your list
-                                {
-                                Console.WriteLine("Item {0} not found", deleteItemNumber);
-                                
-                                }
-                            break;
+                    {
+                        //Console.Write("Please enter an item ID No:");
+                        //string input = Console.ReadLine();
+                        //int deleteItemNumber = int.Parse(input);
+                        //bool deleted = false;
+                    }
+                    //for (int x = 0; x < countOfItems; x++)
+                    {
+                        //if (itemData[x].ItemNumber == deleteItemNumber)
+                        {
+                            //deleted = true;
+                            // delete the item if you found it
+                            // reset the count to show a new count for your list 
+                            //(Note: your list is now reduced by one item)
+                            //for (var index = deleteItemNumber - 1; index < )     
+                            //countOfItems--;
+                            //  break;
+                        }
+                    }
 
+                    //if (deleted) // hint the user that you deleted the requested item
+                    {
+                        //Console.WriteLine("Item deleted");
 
                     }
-                        
+                    //else // if did not find it, hint the user that you did not find it in your list
+                    {
+                        //Console.WriteLine("Item {0} not found", deleteItemNumber);
+
+                    }
+                    //break;
+
+
+                                  
                         
                 case 4:  //list all items in current database if this option is selected
                     {
@@ -170,8 +203,8 @@ class Program
 
                             Console.WriteLine("Item#  ItemID  Description           Price  QOH  Cost  Value");
                             Console.WriteLine("-----  ------  --------------------  -----  ---  ----  -----");
-                            Console.WriteLine("{0,5}  {1:6}  {2:-20}  {3,5:C}  {4,3}  {5,4:C}  {6,5:C}", 
-                                itemData[index].ItemNumber, countOfItems, itemData[index].Description, 
+                            Console.WriteLine("{0,5}  {1,6}  {2,-20}  {3,5:C}  {4,3} {5,4:C} {5,5:C}", 
+                                itemData[index].ItemNumber, countOfItems + 1, itemData[index].Description, 
                                 itemData[index].PricePerItem, itemData[index].QuantityOnHand,
                                 itemData[index].OurCostPerItem, itemData[index].ValueOfItem);
 
@@ -201,7 +234,7 @@ class Program
 
             default:
                 {
-                    Console.Write("Invalid Option, try again");
+                    Console.Write("Invalid Option [{0}], try again", optx);
                     break;
                 }
         }
