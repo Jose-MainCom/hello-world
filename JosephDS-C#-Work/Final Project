@@ -1,0 +1,210 @@
+// Write a program to keep track of some inventory items as shown below.
+// Hint: when creating arrays, as you get or read items into
+// your array, then initialize each array spot before its use
+// and place a counter or use your own Mylength to keep track
+// of your array length as it is used.
+
+using System;
+
+struct ItemData
+{
+    public int ItemNumber;
+    public string Description;
+    public double PricePerItem;
+    public int QuantityOnHand;
+    public double OurCostPerItem;
+    public double ValueOfItem;
+}
+
+class Program
+{
+    public static void Main()
+    {
+        // use an interger to keep track of the count of items in your inventory 
+        for (int counter = 0; counter < 101; counter++)
+        {
+            Console.WriteLine("The total number of items in inventory total {0}", counter);
+        }
+
+        // create an array of your ItemData struct
+        var countOfItems = 0;
+        var itemData = new ItemData[100];
+
+
+        // use a never ending loop that shows the user what options they can select 
+        while (true)
+        {
+            Console.Write("Please select an option: 1.) Add an item 2.) Change an item 3.) Delete an item 4.) List all items 5.) Quit");
+
+            // as long as no one Quits, continue the inventory update
+
+            // in that loop, show what user can select from the list
+
+            // read the user's input and then create what case it falls
+
+            string strx = Console.ReadLine(); // read user's input    
+
+            int optx = int.Parse(strx); // convert the given string to integer to match our case types shown below
+
+            Console.WriteLine(); // provide an extra blank line on screen
+
+            switch (optx)
+            {
+                case 1: // add an item to the list if this option is selected
+                    {
+                        Console.Write("Item number :");
+                        var itemNumber = Console.ReadLine();
+
+                        Console.Write("Description :");
+                        var description = Console.ReadLine();
+
+                        Console.Write("Price per item :");
+                        var pricePerItem = Console.ReadLine();
+
+                        Console.Write("Quantity on hand :");
+                        var quantityOnHand = Console.ReadLine();
+
+                        Console.Write("Our cost per item :");
+                        var costPerItem = Console.ReadLine();
+
+                        Console.Write("Value of item :");
+                        var valueOfItem = Console.ReadLine();
+
+                        itemData[countOfItems].ItemNumber = int.Parse(itemNumber);
+                        itemData[countOfItems].Description = description;
+                        itemData[countOfItems].PricePerItem = double.Parse(pricePerItem);
+                        itemData[countOfItems].QuantityOnHand = int.Parse(quantityOnHand);
+                        itemData[countOfItems].OurCostPerItem = double.Parse(costPerItem);
+                        itemData[countOfItems].ValueOfItem = double.Parse(valueOfItem);
+
+                        countOfItems++;
+                        break;
+
+                    }
+
+                case 2: //change items in the list if this option is selected
+                    {
+                        Console.Write("Please enter an item ID No:");
+                        string input = Console.ReadLine();
+                        int changeItemNumber = int.Parse(input);
+                        bool fFound = false;
+
+                        for (int x = 0; x < countOfItems; x++)
+                        {
+                            if (itemData[x].ItemNumber == changeItemNumber)
+                            {
+                                fFound = true;
+                                // code to show what has to happen if the item in the list is found
+                                // reset the count to show a new count for your list 
+                                // (Note: your list is now increased by one item)
+                            }
+                        }
+
+                        if (!fFound) // and if not found
+                        {
+                            Console.WriteLine("Item {0} not found", changeItemNumber);
+                            
+                        }
+                        break;
+                    }
+
+                case 3: //delete items in the list if this option is selected
+                    {
+
+                        if (countOfItems == 0)
+                        {
+                            Console.WriteLine("There are no items to delete.");
+                            break;
+                        }
+                        for (var index = 0; index < countOfItems; index++)
+                        {
+                            
+                            itemData[index].ItemNumber = itemData[index + 1].ItemNumber;
+                            itemData[index].Description = itemData[index + 1].Description;
+                            itemData[index].PricePerItem = itemData[index + 1].PricePerItem;
+                            itemData[index].QuantityOnHand = itemData[index + 1].QuantityOnHand;
+                            itemData[index].OurCostPerItem = itemData[index + 1].OurCostPerItem;
+                            itemData[index].ValueOfItem = itemData[index + 1].ValueOfItem;
+                        }
+                      
+                        {
+                            Console.Write("Please enter an item ID No:");
+                            string input = Console.ReadLine();
+                            int deleteItemNumber = int.Parse(input);
+                            bool deleted = false;
+                        }
+                            for (int x = 0; x < countOfItems; x++)
+                            {
+                                if (itemData[x].ItemNumber == deleteItemNumber)
+                                {
+                                    deleted = true;
+                                    // delete the item if you found it
+                                    // reset the count to show a new count for your list 
+                                    //(Note: your list is now reduced by one item)
+                                for (var index = deleteItemNumber - 1; index < )     
+                                countOfItems--;
+                                    break;
+                                }
+                            }
+
+                            if (deleted) // hint the user that you deleted the requested item
+                                {
+                                Console.WriteLine("Item deleted");
+
+                                }
+                            else // if did not find it, hint the user that you did not find it in your list
+                                {
+                                Console.WriteLine("Item {0} not found", deleteItemNumber);
+                                
+                                }
+                            break;
+
+
+                    }
+                        
+                        
+                case 4:  //list all items in current database if this option is selected
+                    {
+                        for (int index = 0; index < countOfItems; index++)
+                        {
+
+                            Console.WriteLine("Item#  ItemID  Description           Price  QOH  Cost  Value");
+                            Console.WriteLine("-----  ------  --------------------  -----  ---  ----  -----");
+                            Console.WriteLine("{0,5}  {1:6}  {2:-20}  {3,5:C}  {4,3}  {5,4:C}  {6,5:C}", 
+                                itemData[index].ItemNumber, countOfItems, itemData[index].Description, 
+                                itemData[index].PricePerItem, itemData[index].QuantityOnHand,
+                                itemData[index].OurCostPerItem, itemData[index].ValueOfItem);
+
+                            // code in this block. Use the above line format as a guide for printing or displaying the items in your list right under it
+                        }
+                        break;
+                        
+                }
+
+
+            case 5: //quit the program if this option is selected
+                {
+                    Console.Write("Are you sure that you want to quit(y/n)?");
+                    string input = Console.ReadLine();
+
+                        if (optx == 5)
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                            //as long as it is not 5, the process is not breaking   
+                 }
+                  
+
+            default:
+                {
+                    Console.Write("Invalid Option, try again");
+                    break;
+                }
+        }
+    }
+}
+}
