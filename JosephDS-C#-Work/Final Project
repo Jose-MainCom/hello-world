@@ -98,7 +98,14 @@ class Program
 
                 case 2: //change items in the list if this option is selected
                     {
-                        Console.Write("Please enter an item ID No:");
+                        if (countOfItems == 0)
+                        {
+                            Console.WriteLine("There are no Item IDs available to change!");
+                            Console.WriteLine();
+                            break;
+                        }
+
+                        Console.Write("Please enter an Item ID number: ");
                         string input = Console.ReadLine();
                         int changeItemNumber = int.Parse(input);
                         bool fFound = false;
@@ -116,8 +123,8 @@ class Program
 
                         if (!fFound) // and if not found
                         {
-                            Console.WriteLine("Item {0} not found", changeItemNumber);
-
+                            Console.WriteLine("Item ID {0} not found!", changeItemNumber);
+                            Console.WriteLine();
                         }
                         break;
                     }
@@ -127,7 +134,8 @@ class Program
 
                         if (countOfItems == 0)
                         {
-                            Console.WriteLine("There are no items to delete.");
+                            Console.WriteLine("There are no Item IDs available to delete!");
+                            Console.WriteLine();
                             break;
                         }
 
@@ -147,8 +155,6 @@ class Program
                         var itemIDToDelete = int.Parse(input);
                         var indexToDelete = (itemIDToDelete);
                         bool fFound = false;
-
-
                         bool deleted = !false;
 
                         for (var index = indexToDelete - 1; index < countOfItems; index++)
@@ -165,20 +171,16 @@ class Program
 
                         if (deleted) // hint the user that you deleted the requested item
                         {
-                            Console.WriteLine("Item {0} deleted", indexToDelete);
+                            Console.WriteLine("Item {0} has been deleted", indexToDelete);
                             break;
                         }
                         else // if did not find it, hint the user that you did not find it in your list
                         {
-                            Console.WriteLine("Item {0} not found", indexToDelete);
+                            Console.WriteLine("Item {0} was not found", indexToDelete);
                             return;
                         }
                     }
-                           
-                    
-
-
-                                  
+                                                                      
                         
                 case 4:  //list all items in current database if this option is selected
                     {
@@ -201,7 +203,7 @@ class Program
 
             case 5: //quit the program if this option is selected
                 {
-                    Console.Write("Are you sure that you want to quit(y/n)?");
+                    Console.Write("Are you sure that you want to quit(y/n)? ");
                     string input = Console.ReadLine();
 
                         if (optx == 5)
@@ -218,7 +220,8 @@ class Program
 
             default:
                 {
-                    Console.Write("Invalid Option [{0}], try again", optx);
+                    Console.Write("Invalid Option [{0}], please try again! ", optx);
+                    Console.WriteLine();
                     break;
                 }
         }
