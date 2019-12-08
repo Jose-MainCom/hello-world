@@ -5,7 +5,8 @@
 // of your array length as it is used.
 
 using System;
-
+using System.Collections;
+using System.Collections.Generic;
 struct ItemData
 {
     public int ItemNumber;
@@ -39,7 +40,6 @@ class Program
             // read the user's input and then create what case it falls
             
             string strx = Console.ReadLine(); // read user's input    
-            
             
             int optx = int.Parse(strx); // convert the given string to integer to match our case types shown below
             
@@ -280,11 +280,10 @@ class Program
                         }
                             //as long as it is not 5, the process is not breaking   
                  }
-                  
 
-            default:
+                default:
                 {
-                    Console.Write("Invalid Option [{0}], please try again! ", optx);
+                    Console.Write("Invalid Option [{0}], please try again! ", strx);
                     Console.WriteLine();
                     break;
                 }
