@@ -39,7 +39,7 @@ class Program
             // read the user's input and then create what case it falls
             
             string strx = Console.ReadLine(); // read user's input    
-
+            
             
             int optx = int.Parse(strx); // convert the given string to integer to match our case types shown below
             
@@ -73,12 +73,12 @@ class Program
 
                         Console.Write("Quantity on hand: ");
                         var quantityOnHand = Console.ReadLine();
-
+                        
                         Console.Write("Our cost per item: ");
                         var costPerItem = Console.ReadLine();
 
-                        Console.Write("Value of item: ");
-                        var valueOfItem = Console.ReadLine();
+                        //Console.Write("Value of item: ");
+                        //var valueOfItem = Console.ReadLine();
 
                         Console.WriteLine();
 
@@ -89,7 +89,11 @@ class Program
                                 itemData[countOfItems].PricePerItem = double.Parse(pricePerItem);
                                 itemData[countOfItems].QuantityOnHand = int.Parse(quantityOnHand);
                                 itemData[countOfItems].OurCostPerItem = double.Parse(costPerItem);
-                                itemData[countOfItems].ValueOfItem = double.Parse(valueOfItem);
+                                
+                                double qoh = double.Parse(quantityOnHand);
+                                double cpi = double.Parse(costPerItem); 
+                                
+                                itemData[countOfItems].ValueOfItem = cpi * qoh;
                       
                         countOfItems++;
                         break;
