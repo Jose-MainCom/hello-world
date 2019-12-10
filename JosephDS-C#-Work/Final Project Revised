@@ -6,6 +6,8 @@
 
 using System;
 using System.Text.RegularExpressions;
+using System.Collections;
+using System.Collections.Generic;
 struct ItemData
 {
     public int ItemNumber;
@@ -74,9 +76,6 @@ class Program
                     Console.Write("Our cost per item: ");
                     var costPerItem = Console.ReadLine();
 
-                    //Console.Write("Value of item: ");
-                    //var valueOfItem = Console.ReadLine();
-
                     Console.WriteLine();
 
                     itemData[countOfItems].ItemNumber = int.Parse(itemNumber);
@@ -95,34 +94,104 @@ class Program
 
                 case 2: //change items in the list if this option is selected
                     {
-                        Console.Write("Please enter an item ID No:");
+                        if (countOfItems == 0)
+                        {
+                            Console.WriteLine("There are no Item No's available to change!");
+                            Console.WriteLine();
+                            break;
+                        }
+                        for (var index = 0; index < countOfItems; index++)
+                        {
+                            Console.WriteLine("Item#  ItemID  Description           Price  QOH  Cost  Value");
+                            Console.WriteLine("-----  ------  --------------------  -----  ---  ----  -----");
+                            Console.WriteLine("{0,5}  {1,6}  {2,-20}  {3,5:C}  {4,3} {5,4:C}  {6,5:C}",
+                            itemData[index].ItemNumber, index + 1, itemData[index].Description,
+                            itemData[index].PricePerItem, itemData[index].QuantityOnHand,
+                            itemData[index].OurCostPerItem, itemData[index].ValueOfItem);
+
+                            Console.WriteLine();
+                        }
+
+                        Console.Write("Please enter an item ID No to change: (1-{0} ", countOfItems);
                         string input = Console.ReadLine();
                         int changeItemNumber = int.Parse(input);
+                        int deleteItemNumber = int.Parse(input);
                         bool fFound = false;
 
                         for (int x = 0; x < countOfItems; x++)
                         {
-                            if (itemData[x].ItemNumber == changeItemNumber)
+                            if (itemData[x].ItemNumber == deleteItemNumber)
                             {
-                                fFound = true;
-                                //for (int myIndex = 0)
-                                // code to show what has to happen if the item in the list is found
-                                // reset the count to show a new count for your list 
-                                // (Note: your list is now increased by one item)
+                                int searchInt = deleteItemNumber;
+                                int myIndex = Array.IndexOf(itemData, searchInt);
 
-                                countOfItems++;
-                                break;
+                                for (var index = myIndex - 1; index < countOfItems; index++)
+                                {
+                                    itemData[x].Description = itemData[x].Description;
+                                    itemData[x].PricePerItem = itemData[x].PricePerItem;
+                                    itemData[x].QuantityOnHand = itemData[x].QuantityOnHand;
+                                    itemData[x].OurCostPerItem = itemData[x].OurCostPerItem;
+                                    itemData[x].ValueOfItem = itemData[x].ValueOfItem;
+                                }
                             }
+                                countOfItems--;
+
+                                for (int t = 0; t < countOfItems; t++)
+                                {
+                                    if (itemData[x].ItemNumber == changeItemNumber)
+                                    {
+                                        fFound = true;
+                                        for (var index = x; index < countOfItems; index++)
+                                        {
+                                            itemData[x].Description = itemData[x + 1].Description;
+                                            itemData[x].PricePerItem = itemData[x + 1].PricePerItem;
+                                            itemData[x].QuantityOnHand = itemData[x + 1].QuantityOnHand;
+                                            itemData[x].OurCostPerItem = itemData[x + 1].OurCostPerItem;
+                                            itemData[x].ValueOfItem = itemData[x + 1].ValueOfItem;
+                                        }
+                                        Console.Write("New description: ");
+                                        var newDescription = Console.ReadLine();
+                                        Console.Write("New price per item: ");
+                                        var newPricePerItem = Console.ReadLine();
+                                        Console.Write("New quantity on hand: ");
+                                        var newQuantityOnHand = Console.ReadLine();
+                                        Console.Write("New cost per item");
+                                        var newCostPerItem = Console.ReadLine();
+                                        double nqohx = double.Parse(newQuantityOnHand);
+                                        double ncpix = double.Parse(newCostPerItem);
+
+                                        itemData[countOfItems].ValueOfItem = ncpix * nqohx;
+                                        itemData[countOfItems].Description = newDescription;
+                                        itemData[countOfItems].PricePerItem = double.Parse(newPricePerItem);
+                                        itemData[countOfItems].QuantityOnHand = int.Parse(newQuantityOnHand);
+                                        itemData[countOfItems].OurCostPerItem = double.Parse(newCostPerItem);
+                                        //for (int myIndex = 0)
+                                        // code to show what has to happen if the item in the list is found
+                                        // reset the count to show a new count for your list 
+                                        // (Note: your list is now increased by one item)
+
+                                        countOfItems++;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (!fFound) // and if not found
+                            {
+                                Console.WriteLine("Item {0} changed.", changeItemNumber);
+                                Console.WriteLine();
+                            }
+                            else // if did not find it, hint the user that you did not find it in your list
+                            {
+                                Console.WriteLine("Item {0} not found.", changeItemNumber);
+                                Console.WriteLine();
+                            }
+
+                            break;
                         }
-
-                        if (!fFound) // and if not found
-                        {
-                            //Console.WriteLine("Item {0} not found.", changeItemNumber);
-                        }
-
-                        break;
-                    }
-
+                    
+                            
+                        
                 case 3: //delete items in the list if this option is selected
                     {
 
@@ -220,7 +289,6 @@ class Program
                 case 5: //quit the program if this option is selected
                     {
                         Console.Write("Are you sure that you want to quit(y/n)? ");
-                        Console.WriteLine();
                         string input = Console.ReadLine();
                         { 
                            if (input == "y" || input == "Y")
@@ -241,7 +309,7 @@ class Program
                             Console.Write("Invalid Option [{0}], please try again! ", strx);
                             Console.WriteLine();
                             break;
-                        }
+                    }
                     }
             }
         }
