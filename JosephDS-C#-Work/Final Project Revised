@@ -5,7 +5,7 @@
 // of your array length as it is used.
 
 using System;
-
+using System.Text.RegularExpressions;
 struct ItemData
 {
     public int ItemNumber;
@@ -31,9 +31,14 @@ class Program
             // as long as no one Quits, continue the inventory update
             // read the user's input and then create what case it falls
 
-            string strx = Console.ReadLine(); // read user's input    
+            string strx = Console.ReadLine(); // read user's input
+            if (Regex.IsMatch(strx, @"^[a-zA-Z]+$"))
+            {
+                Console.WriteLine("Please enter a numeral between 1 and 5. ");
+                Console.WriteLine();
+                continue;
+            }
             int optx = int.Parse(strx); // convert the given string to integer to match our case types shown below
-
             Console.WriteLine(); // provide an extra blank line on screen
 
             switch (optx)
@@ -49,7 +54,7 @@ class Program
                         {
                             Console.WriteLine("The list is full!");
                             Console.WriteLine();
-                            
+
                             continue;
                         }
                     }
@@ -73,7 +78,7 @@ class Program
                     //var valueOfItem = Console.ReadLine();
 
                     Console.WriteLine();
-                                       
+
                     itemData[countOfItems].ItemNumber = int.Parse(itemNumber);
                     itemData[countOfItems].Description = description;
                     itemData[countOfItems].PricePerItem = double.Parse(pricePerItem);
@@ -87,14 +92,14 @@ class Program
 
                     countOfItems++;
                     break;
-                    
+
                 case 2: //change items in the list if this option is selected
                     {
                         Console.Write("Please enter an item ID No:");
                         string input = Console.ReadLine();
                         int changeItemNumber = int.Parse(input);
                         bool fFound = false;
-                         
+
                         for (int x = 0; x < countOfItems; x++)
                         {
                             if (itemData[x].ItemNumber == changeItemNumber)
@@ -104,7 +109,7 @@ class Program
                                 // code to show what has to happen if the item in the list is found
                                 // reset the count to show a new count for your list 
                                 // (Note: your list is now increased by one item)
-                                
+
                                 countOfItems++;
                                 break;
                             }
@@ -145,7 +150,7 @@ class Program
                         string input = Console.ReadLine();
                         int deleteItemNumber = int.Parse(input);
                         bool deleted = false;
-                        
+
 
                         for (int x = 0; x < countOfItems; x++)
                         {
@@ -157,7 +162,7 @@ class Program
 
                                 for (var index = myIndex - 1; index < countOfItems; index++)
                                 {
-                                    itemData[x].ItemNumber = itemData[x +1].ItemNumber;
+                                    itemData[x].ItemNumber = itemData[x + 1].ItemNumber;
                                     itemData[x].Description = itemData[x + 1].Description;
                                     itemData[x].PricePerItem = itemData[x + 1].PricePerItem;
                                     itemData[x].QuantityOnHand = itemData[x + 1].QuantityOnHand;
@@ -207,34 +212,37 @@ class Program
 
                             Console.WriteLine();
                         }
-                            break;
+                        break;
                         // code in this block. Use the above line format as a guide for printing or displaying the items in your list right under it
                     }
-                    
+
 
                 case 5: //quit the program if this option is selected
                     {
                         Console.Write("Are you sure that you want to quit(y/n)? ");
+                        Console.WriteLine();
                         string input = Console.ReadLine();
-                        
-                        if (optx == 5)
-                        {
-                            return;
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                        //as long as it is not 5, the process is not breaking   
-                    }
+                        { 
+                           if (input == "y" || input == "Y")
+                            {
+                                return;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+
+
+                        }    //as long as it is not 5, the process is not breaking   
+                     }
 
                 default:
                     {
-                        Console.Write("Invalid Option [{0}], please try again! ", strx);
-                        Console.WriteLine();
-                        break;
+                            Console.Write("Invalid Option [{0}], please try again! ", strx);
+                            Console.WriteLine();
+                            break;
+                        }
                     }
             }
         }
     }
-}
