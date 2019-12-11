@@ -98,11 +98,12 @@ class ProjectMain
         inventory.Add(6, "Hunter");
         inventory.Add(7, "Willy");
         inventory.SaveFile();
-        foreach(Item item in items)
+        
+        foreach (Item item in items)
         {
-            Formatter.Serialize(Stream, item);
+            formatter.Serialize(stream, item);
         }
-
+        stream.Close();
         inventory.LoadFile();
 
         inventory.ListAll();
