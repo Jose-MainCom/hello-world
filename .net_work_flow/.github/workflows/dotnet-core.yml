@@ -45,8 +45,8 @@ jobs:
 
     - name: Build
       run: |
-        dotnet restore Link.Chromely.Vue/Link.Chromely.Vue.csproj
-        msbuild /t:Pack /p:Configuration=Debug Link.Chromely.Vue/Link.Chromely.Vue.csproj
+        dotnet restore DotNet.Core.Console.Exemple/DotNet.Core.Console.Exemple.csproj
+        msbuild /t:Pack /p:Configuration=Debug DotNet.Core.Console.Exemple/DotNet.Core.Console.Exemple.csproj
     
     - name: Copy
       run: copy Link.Chromely.Vue/bin/Debug/*.nupkg .
