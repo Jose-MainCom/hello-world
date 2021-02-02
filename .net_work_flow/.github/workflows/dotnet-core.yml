@@ -49,7 +49,7 @@ jobs:
         msbuild /t:Pack /p:Configuration=Debug DotNet.Core.Console.Exemple/DotNet.Core.Console.Exemple.csproj
     
     - name: Copy
-      run: copy Link.Chromely.Vue/bin/Debug/*.nupkg .
+      run: copy DotNet.Core.Console.Exemple/bin/Debug/*.nupkg .
     
     # - name: PushNuget
     #   run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.PUBLISH_TO_NUGET_ORG }} --skip-duplicate
