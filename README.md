@@ -1,6 +1,6 @@
 # 👋 Hi 
 
-I’m @mapineda48
+I’m Miguel Angel Pineda Vega
 
 <!---
 mapineda48/mapineda48 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
