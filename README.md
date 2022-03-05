@@ -1,6 +1,6 @@
 # 👋 Hi 
 
-I’m Miguel Angel Pineda Vega
+I am a passionate web-focused software developer.
 
 <!---
 mapineda48/mapineda48 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
