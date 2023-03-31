@@ -11,8 +11,6 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta property="og:image"
-          content="https://as-cdt-pub-migr-betaws-ww-p-001-stage.azurewebsites.net/images/social_media_preview_image.png" />
 
     <link href="https://california.azureedge.net/cdt/statetemplate/6.0.8/css/cagov.core.min.css" rel="stylesheet">
 
@@ -83,6 +81,7 @@
         gtag('config', 'G-69TD0KNT0F'); // statewide GA4 Property ID
         gtag('config', 'G-75V2BNQ3DR'); // update individual agency GA4 Property ID code before deployment
     </script>
+    @await RenderSectionAsync("Head", required: false)
 </head>
 
 <body class="primary">
@@ -203,7 +202,7 @@
         <div class="navigation-search full-width-nav container">
             <div id="head-search" class="search-container featured-search">
                 <div class="container">
-                    <form id="Search" class="pos-rel" action="/serp.html">
+                    <form id="Search" class="pos-rel" action="@Url.Action("serp")">
                         <span class="sr-only" id="SearchInput">Custom Google Search</span>
                         <input type="text" name="q" aria-labelledby="SearchInput" placeholder="Search" class="search-textfield" />
                         <button type="submit" class="gsc-search-button">

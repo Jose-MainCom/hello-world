@@ -18,6 +18,11 @@ namespace California_State_Template_MVC_V6_2.Controllers
             return View();
         }
 
+        public IActionResult Serp()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
