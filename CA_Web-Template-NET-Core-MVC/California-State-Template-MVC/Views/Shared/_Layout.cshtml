@@ -17,15 +17,15 @@
 
     You may also use the CDN instead of using the local folder...
 
-    <link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/cagov.core.min.css"/>
-    <link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/colortheme-oceanside.min.css"/>
-    <script src="https://california.azureedge.net/cdt/statetemplate/6.2.0/js/cagov.core.min.js"></script>
+    <link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.1/css/cagov.core.min.css"/>
+    <link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.1/css/colortheme-oceanside.min.css"/>
+    <script src="https://california.azureedge.net/cdt/statetemplate/6.2.1/js/cagov.core.min.js"></script>
 
     -->
-    <link href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/cagov.core.min.css" rel="stylesheet">
-    <link href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/colortheme-oceanside.min.css"
+    <link href="https://california.azureedge.net/cdt/statetemplate/6.2.1/css/cagov.core.min.css" rel="stylesheet">
+    <link href="https://california.azureedge.net/cdt/statetemplate/6.2.1/css/colortheme-oceanside.min.css"
           rel="stylesheet">
-    <script src="https://california.azureedge.net/cdt/statetemplate/6.2.0/js/cagov.core.min.js"></script>
+    <script src="https://california.azureedge.net/cdt/statetemplate/6.2.1/js/cagov.core.min.js"></script>
     <!-- END STATE_TEMPLATE -->
 
     <link rel="apple-touch-icon-precomposed" sizes="100x100" href="/images/apple-touch-icon-precomposed.png">
@@ -47,15 +47,13 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://www.google-analytics.com" />
     <script>
-    //The GA4 Measurement ID that this website should use for website analytics
     //*** BEGIN STATE TEMPLATE CHANGE REQUESTED
+    //Your GA4 Measurement ID that this website should use for website analytics
     var yourGA4MeasurementId = "G-75V2BNQ3DR"; //Set to the default GA4 Measurement ID (G-75V2BNQ3DR), please change it to the one for your organization.
     //*** END STATE TEMPLATE CHANGE REQUESTED
 
-    //Keep this tag mananger code as is, it helps collect data for ALL ca.gov sites
-    var stateGTMAccount = "GTM-NJ6Q4MV"; //GTM-NJ6Q4MV, all ca.gov + State Template Version 6.2.0
-
     //Support code to make this work, just leave this as is
+    var stateGTMAccount = "GTM-NJ6Q4MV"; //GTM-NJ6Q4MV - all ca.gov
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -64,8 +62,6 @@
     })(window,document,'script','dataLayer',stateGTMAccount);
     </script>
     <!-- END Google Tag Manager -->
-
-    <!-- END Google Analytics -->
     @await RenderSectionAsync("Head", required: false)
 </head>
 
