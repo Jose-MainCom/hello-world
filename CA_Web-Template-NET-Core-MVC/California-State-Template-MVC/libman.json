@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "jsdelivr",
+      "library": "@cagovweb/state-template@6.2.1",
+      "destination": "wwwroot/lib/state-template/"
+    }
+  ]
+}
