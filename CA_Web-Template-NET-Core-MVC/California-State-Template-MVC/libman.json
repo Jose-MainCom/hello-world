@@ -4,7 +4,7 @@
   "libraries": [
     {
       "provider": "jsdelivr",
-      "library": "@cagovweb/state-template@6.3.0",
+      "library": "@cagovweb/state-template@6.3.1",
       "destination": "wwwroot/lib/state-template/"
     }
   ]
