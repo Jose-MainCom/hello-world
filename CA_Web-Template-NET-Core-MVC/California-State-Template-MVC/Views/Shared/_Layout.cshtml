@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>@ViewData["Title"] - California State Template MVC</title>
     <meta charset="utf-8">
@@ -17,9 +18,9 @@
 
     You may also use the CDN instead of using the local folder...
 
-    <link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.0/css/cagov.core.min.css" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.0/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
-    <script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.4.0/js/cagov.core.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.1/css/cagov.core.min.css" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.1/css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
+    <script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.1/js/cagov.core.min.js" crossorigin="anonymous"></script>
 
     -->
     <link href="~/lib/state-template/dist/css/cagov.core.min.css" rel="stylesheet">
@@ -46,19 +47,22 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://www.google-analytics.com" />
     <script>
-    //*** BEGIN STATE TEMPLATE CHANGE REQUESTED
-    //Your GA4 Measurement ID that this website should use for website analytics
-    var yourGA4MeasurementId = "G-75V2BNQ3DR"; //Set to the default GA4 Measurement ID (G-75V2BNQ3DR), please change it to the one for your organization.
-    //*** END STATE TEMPLATE CHANGE REQUESTED
+        //*** BEGIN STATE TEMPLATE CHANGE REQUESTED
+        //Your GA4 Measurement ID that this website should use for website analytics
+        var yourGA4MeasurementId = "G-75V2BNQ3DR"; //Set to the default GA4 Measurement ID (G-75V2BNQ3DR), please change it to the one for your organization.
+        //*** END STATE TEMPLATE CHANGE REQUESTED
 
-    //Support code to make this work, just leave this as is
-    var stateGTMAccount = "GTM-NJ6Q4MV"; //GTM-NJ6Q4MV - all ca.gov
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    (function(){dataLayer.push(arguments)})('config',yourGA4MeasurementId,{cookie_flags:'secure;samesite=lax;domain='});
-    })(window,document,'script','dataLayer',stateGTMAccount);
+        //Support code to make this work, just leave this as is
+        var stateGTMAccount = "GTM-NJ6Q4MV"; //GTM-NJ6Q4MV - all ca.gov
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            (function () { dataLayer.push(arguments) })('config', yourGA4MeasurementId, { cookie_flags: 'secure;samesite=lax;domain=' });
+        })(window, document, 'script', 'dataLayer', stateGTMAccount);
     </script>
     <!-- END Google Tag Manager -->
     @await RenderSectionAsync("Head", required: false)
@@ -83,7 +87,8 @@
                                 <span class="ca-gov-logo-svg"></span>
                             </a>
                         </div>
-                        <p class="official-tag"><span class="desktop-only">Official website of the</span> State of California</p>
+                        <p class="official-tag"><span class="desktop-only">Official website of the</span> State of
+                            California</p>
                     </div>
                     <div class="settings-links"></div>
                 </div>
@@ -97,10 +102,7 @@
                 <div class="header-organization-banner">
                     <a href="">
                         <div class="logo-assets">
-                            <img
-                                src="/images/sample-logo.png"
-                                class="logo-img"
-                                alt="State Template Logo"
+                            <img src="/images/sample-logo.png" class="logo-img" alt="State Template Logo"
                                 style="aspect-ratio: 80 / 70" />
                             <div class="logo-text">
                                 <span class="logo-state">State of California</span>
@@ -115,23 +117,20 @@
 
         <!-- mobile navigation controls -->
         <div class="mobile-controls">
-        <span class="mobile-control-group mobile-header-icons">
-            <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
-        </span>
-        <div class="mobile-control-group main-nav-icons">
-            
-            <button
-            id="nav-icon3"
-            class="mobile-control toggle-menu"
-            aria-expanded="false"
-            aria-controls="navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span class="sr-only">Menu</span>
-            </button>
-        </div>
+            <span class="mobile-control-group mobile-header-icons">
+                <!-- Add more mobile controls here. These will be on the right side of the mobile page header section -->
+            </span>
+            <div class="mobile-control-group main-nav-icons">
+
+                <button id="nav-icon3" class="mobile-control toggle-menu" aria-expanded="false"
+                    aria-controls="navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span class="sr-only">Menu</span>
+                </button>
+            </div>
         </div>
 
 
@@ -142,13 +141,14 @@
                 <div class="container">
                     <form id="Search" class="pos-rel" action="@Url.Action("serp")">
                         <span class="sr-only" id="SearchInput">Custom Google Search</span>
-                        <input type="search" name="q" aria-labelledby="SearchInput" placeholder="Search" class="search-textfield" />
+                        <input type="search" name="q" aria-labelledby="SearchInput" placeholder="Search"
+                            class="search-textfield" />
                         <button type="submit" class="gsc-search-button">
-                            <span class="ca-gov-icon-search" aria-hidden="true"></span><span class="sr-only">Submit</span>
+                            <span class="ca-gov-icon-search" aria-hidden="true"></span><span
+                                class="sr-only">Submit</span>
                         </button>
                         <div class="close-search-btn">
-                            <button class="close-search gsc-clear-button border-0 bg-transparent pos-rel"
-                                    type="reset">
+                            <button class="close-search gsc-clear-button border-0 bg-transparent pos-rel" type="reset">
                                 <span class="sr-only">Close</span>
                             </button>
                         </div>
@@ -199,7 +199,8 @@
                 <ul class="socialsharer-container">
                     <li>
                         <a href="https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML">
-                            <span class="ca-gov-icon-github" aria-hidden="true"></span><span class="sr-only">GitHub</span>
+                            <span class="ca-gov-icon-github" aria-hidden="true"></span><span
+                                class="sr-only">GitHub</span>
                         </a>
                     </li>
                 </ul>
