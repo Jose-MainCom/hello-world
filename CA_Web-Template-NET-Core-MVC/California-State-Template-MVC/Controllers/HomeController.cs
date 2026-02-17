@@ -1,8 +1,8 @@
-﻿using California_State_Template_MVC_V6_2.Models;
+using California_State_Template_MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace California_State_Template_MVC_V6_2.Controllers
+namespace California_State_Template_MVC.Controllers
 {
     public class HomeController : Controller
     {

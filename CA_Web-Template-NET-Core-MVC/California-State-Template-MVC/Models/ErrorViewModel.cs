@@ -1,4 +1,4 @@
-namespace California_State_Template_MVC_V6_2.Models
+namespace California_State_Template_MVC.Models
 {
     public class ErrorViewModel
     {
