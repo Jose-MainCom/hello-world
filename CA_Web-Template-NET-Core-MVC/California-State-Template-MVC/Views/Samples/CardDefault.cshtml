@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Card Default";
+    Layout = "~/Views/Shared/Layouts/_SampleSamplesLayout.cshtml";
+    ViewData["Landing"] = "Samples";
+
+    var card = new CardComponentViewModel
+    {
+        Title = "Card title",
+        Body = "Use the content found at the button link to inspire your card title.",
+        ButtonText = "Button",
+        ButtonUrl = "javascript:;",
+        ButtonSrOnlyText = "with link related to card title"
+    };
+}
+<partial name="~/Views/Shared/SampleSite/Components/_Card.cshtml" model="card" />

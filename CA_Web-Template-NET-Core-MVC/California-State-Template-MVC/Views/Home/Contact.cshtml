@@ -1,0 +1,151 @@
+﻿@{
+    ViewData["Title"] = "Contact us";
+    Layout = "~/Views/Shared/Layouts/_SampleHomeLayout.cshtml";
+}
+
+@Html.Raw("""
+<div class="bg-gray-lightest">
+  <div class="container p-t-md">
+    <nav aria-label="You are here" class="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/" title="Home page">Home</a>
+        </li>
+        <li>
+          <a href="/about" title="About page">About</a>
+        </li>
+        <li>Contact us</li>
+      </ol>
+    </nav>
+    <h1 class="m-t-0 p-b-lg">Contact us</h1>
+  </div>
+</div>
+
+<div class="container p-t-md m-b-lg">
+  <div class="row">
+    <div class="col-lg-9">
+      <p class="lead">
+        Have a question or need to send us something? Here are the different
+        ways you can contact us
+      </p>
+
+      <!-- 
+      Use the page-navigation class to list all the h2 sections on a page
+
+      For more information see https://template.webstandards.ca.gov/components/page-navigation.html#Sample
+      -->
+      <nav class="page-navigation m-t-lg"></nav>
+
+      <h2>Online</h2>
+
+      <label class="form-control-label" for="InputNameRequired">
+        <span class="required-label">*</span>
+        <span class="sr-only">Required field:</span>
+        Your name
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="InputNameRequired"
+        placeholder="Your name" />
+      <div class="invalid-feedback d-none">This field is required</div>
+
+      <label class="form-control-label p-t-lg" for="InputEmailRequired">
+        <span class="required-label">*</span>
+        <span class="sr-only">Required field:</span>
+        Email
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="InputEmailRequired"
+        placeholder="Email" />
+      <div class="invalid-feedback d-none">This field is required</div>
+
+      <label class="form-control-label  p-t-lg" for="InputAgency">Agency</label>
+      <input
+        type="text"
+        class="form-control"
+        id="InputAgency"
+        placeholder="Agency" />
+      <div class="feedback text-muted"></div>
+
+      <label for="Select" class="mb-1  p-t-lg">Why you are contacting us</label>
+      <select
+        class="form-select form-select-lg mb-3"
+        aria-label=".form-select-lg example"
+        id="Select">
+        <option selected="">Select an option</option>
+        <option value="3">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="1">Option 3</option>
+      </select>
+
+      <label
+        class="form-control-label  p-t-lg"
+        for="exampleInputCommentRequired">
+        <span class="required-label">*</span>
+        <span class="sr-only">Required field:</span>
+        How can we help?
+      </label>
+      <textarea
+        id="exampleInputCommentRequired"
+        class="form-control"
+        rows="5"
+        cols="80"></textarea>
+      <div class="invalid-feedback d-none">This field is required</div>
+
+      <input
+        type="submit"
+        value="Submit"
+        class="btn btn-primary btn-lg m-y-lg" />
+
+      <h2>Phone</h2>
+
+      <table class="table">
+        <tr>
+          <td>Topic 1</td>
+          <td>(###) ###-####</td>
+        </tr>
+        <tr>
+          <td>Topic 2</td>
+          <td>(###) ###-####</td>
+        </tr>
+        <tr>
+          <td>Topic 3</td>
+          <td>(###) ###-####</td>
+        </tr>
+      </table>
+
+      <h2>Mail</h2>
+
+      <div class="row m-b-lg">
+        <div class="col-lg-6">
+          <h3>Topic 1</h3>
+          <p>Address line 1<br />Address line 2<br />City, State #####-####</p>
+        </div>
+        <div class="col-lg-6">
+          <h3>Topic 2</h3>
+          <p>Address line 1<br />Address line 2<br />City, State #####-####</p>
+        </div>
+      </div>
+
+      <h2>Follow us on social media</h2>
+      <div class="socialsharer-container">
+        <a
+          class="ca-gov-icon-share-facebook text-2rem"
+          title="Facebook Link"
+          href="https://www.facebook.com/"></a>
+        <a
+          class="ca-gov-icon-share-linkedin text-2rem"
+          title="Linkedin Link"
+          href="https://www.linkedin.com/"></a>
+        <a
+          class="ca-gov-icon-share-youtube text-2rem"
+          title="Youtube Link"
+          href="https://www.youtube.com/"></a>
+      </div>
+    </div>
+  </div>
+</div>
+""")

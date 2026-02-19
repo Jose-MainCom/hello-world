@@ -1,4 +1,4 @@
-@{
+﻿@{
     var landing = ViewData["Landing"] as string ?? string.Empty;
     var isTopTaskTwo = string.Equals(landing, "Top task2", StringComparison.OrdinalIgnoreCase);
 }
@@ -16,31 +16,32 @@
     <li class="nav-item">
       <a
         class="first-level-link@(string.Equals(landing, "Components", StringComparison.OrdinalIgnoreCase) ? " active" : string.Empty)"
-        href="/home/components_patterns">Components and patterns</a>
+        href="/components-patterns">Components and patterns</a>
     </li>
     <li class="nav-item">
-      <a class="first-level-link" href="/home/samples_accordion">Samples</a>
+      <a class="first-level-link" href="/samples/accordion">Samples</a>
     </li>
     <li class="nav-item">
       <a
         class="first-level-link@(string.Equals(landing, "Top task1", StringComparison.OrdinalIgnoreCase) ? " active" : string.Empty)"
-        href="/home/top_task_1">Top task 1</a>
+        href="/top-task-1">Top task 1</a>
     </li>
     <li class="nav-item@(isTopTaskTwo ? " active" : string.Empty)" role="presentation">
       <a class="first-level-link">Top task 2</a>
       <div class="sub-nav">
         <ul class="second-level-nav">
           <li class="unit1">
-            <a href="/home/top_task_2" class="second-level-link">Overview</a>
+            <a href="/top-task-2" class="second-level-link">Overview</a>
           </li>
           <li class="unit1">
-            <a href="/home/top_task_2_content_page_1" class="second-level-link">Content 1</a>
+            <a href="/top-task-2/content-page-1" class="second-level-link">Content 1</a>
           </li>
           <li class="unit1">
-            <a href="/home/top_task_2_content_page_2" class="second-level-link">Content 2</a>
+            <a href="/top-task-2/content-page-2" class="second-level-link">Content 2</a>
           </li>
         </ul>
       </div>
     </li>
   </ul>
 </nav>
+

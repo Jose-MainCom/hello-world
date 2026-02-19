@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Side Navigation";
+    Layout = "~/Views/Shared/Layouts/_SampleSamplesLayout.cshtml";
+    ViewData["Landing"] = "Samples";
+
+    var sideNav = new SideNavComponentViewModel
+    {
+        Items =
+        [
+            new SideNavItemComponentViewModel
+            {
+                Text = "Landing page",
+                Url = "javascript:;",
+                IsLanding = true,
+                IsActive = true
+            },
+            new SideNavItemComponentViewModel { Text = "Page 1", Url = "javascript:;" },
+            new SideNavItemComponentViewModel { Text = "Page 2", Url = "javascript:;" },
+            new SideNavItemComponentViewModel { Text = "Page 3", Url = "javascript:;" },
+            new SideNavItemComponentViewModel { Text = "Page 4", Url = "javascript:;" },
+            new SideNavItemComponentViewModel { Text = "Page 5", Url = "javascript:;" }
+        ]
+    };
+}
+<partial name="~/Views/Shared/SampleSite/Components/_SideNav.cshtml" model="sideNav" />

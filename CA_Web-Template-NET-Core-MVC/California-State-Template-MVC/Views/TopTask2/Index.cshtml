@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Top task2";
+    Layout = "~/Views/Shared/Layouts/_SampleHomeLayout.cshtml";
+    ViewData["Landing"] = "Top task2";
+}
+
+@Html.Raw("""
+<div class="bg-primary">
+  <div class="container p-t-md">
+    <nav aria-label="You are here" class="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/" title="Home page">Home</a>
+        </li>
+        <li>Top task 2</li>
+      </ol>
+    </nav>
+    <h1 class="m-t-0 p-b-lg">Top task 2</h1>
+  </div>
+</div>
+
+<div class="container p-t-md">
+  <div class="row">
+    <div class="col-lg-3 pe-lg-5" role="complementary">
+      <!-- Side navigation -->
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a href="/top-task-2" class="landing active">Top task</a>
+          </li>
+          <li>
+            <a href="/top-task-2/content-page-1">Content page 1</a>
+          </li>
+          <li>
+            <ul>
+              <li>
+                <a href="/top-task-2/content-page-2">Content page 2</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="/top-task-2/content-page-3">Content page 3</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-lg-9 p-b-lg">
+      <p class="lead">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+        pretium dapibus diam, a finibus metus congue a.
+      </p>
+
+      <article class="m-t-lg p-b-md brd-solid-1 brd-gray-200 pos-rel rounded-4">
+        <div class="p-a">
+          <h2 class="h4 m-t m-b-sm color-p2">Top task has options</h2>
+          <p class="m-t-md">
+            A sentence about this task that is simple and helpful.
+          </p>
+          <div>
+            <a href="javascript:;" class="btn btn-primary m-t-md">Option 1</a>
+            <a href="javascript:;" class="btn btn-primary m-t-md">Option 2</a>
+            <a href="javascript:;" class="btn btn-primary m-t-md">Option 3</a>
+          </div>
+        </div>
+      </article>
+
+      <h2>Subtitle</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <a href="/top-task-2/content-page-1" class="link-grid"
+            >Content page 1</a
+          >
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="javascript:;" class="link-grid">Content page 2</a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="javascript:;" class="link-grid">Content page 3</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <a href="javascript:;" class="link-grid">Content page 1</a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="javascript:;" class="link-grid">Content page 2</a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="javascript:;" class="link-grid">Content page 3</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+""")

@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Accordion";
+    Layout = "~/Views/Shared/Layouts/_SampleSamplesLayout.cshtml";
+    ViewData["Landing"] = "Samples";
+
+    var paragraph1 = "Once open, the content within the accordion should describe the topic in more detail. It should not repeat the heading.";
+    var paragraph2 = "This part of the accordion is a great place to link to other resources. Remember, important information and calls to action should live outside of the accordion.";
+
+    var accordion = new AccordionComponentViewModel
+    {
+        Items =
+        [
+            new AccordionItemComponentViewModel
+            {
+                Heading = "Add a short, descriptive heading for your topic",
+                Paragraphs = [paragraph1, paragraph2]
+            },
+            new AccordionItemComponentViewModel
+            {
+                Heading = "If your heading must be longer, the accordion will wrap to multiple lines within the container like this",
+                Paragraphs = [paragraph1, paragraph2]
+            },
+            new AccordionItemComponentViewModel
+            {
+                Heading = "This heading tells users what's inside the accordion",
+                Paragraphs = [paragraph1, paragraph2]
+            }
+        ]
+    };
+}
+<partial name="~/Views/Shared/SampleSite/Components/_Accordion.cshtml" model="accordion" />

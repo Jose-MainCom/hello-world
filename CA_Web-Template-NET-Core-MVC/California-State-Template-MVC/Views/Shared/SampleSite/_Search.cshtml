@@ -1,11 +1,11 @@
-@{
+﻿@{
     var path = Context.Request.Path.Value ?? string.Empty;
-    var isSerp = string.Equals(path, "/home/serp", StringComparison.OrdinalIgnoreCase);
+    var isSerp = string.Equals(path, "/serp", StringComparison.OrdinalIgnoreCase);
 }
 @if (!isSerp)
 {
 <div class="container">
-  <form id="Search" class="pos-rel" action="/home/serp">
+  <form id="Search" class="pos-rel" action="/serp">
     <span class="sr-only" id="SearchInput">Custom Google Search</span>
     <input
       type="search"
@@ -20,3 +20,4 @@
   </form>
 </div>
 }
+

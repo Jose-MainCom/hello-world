@@ -1,0 +1,68 @@
+@{
+    ViewData["Title"] = "Alert";
+    Layout = "~/Views/Shared/Layouts/_SampleSamplesLayout.cshtml";
+    ViewData["Landing"] = "Samples";
+
+    var alerts = new[]
+    {
+        new
+        {
+            Heading = "Info",
+            Model = new AlertComponentViewModel
+            {
+                EmphasisText = "New!",
+                Message = "A new version of the State Web Template has launched.",
+                LinkText = "Upgrade now",
+                LinkUrl = "javascript:;",
+                IconImageUrl = "/images/alert-info.svg",
+                IconImageAlt = "alert info icon"
+            }
+        },
+        new
+        {
+            Heading = "Warning",
+            Model = new AlertComponentViewModel
+            {
+                EmphasisText = "Warning:",
+                Message = "Our website may be impacted during upgrade.",
+                LinkText = "Learn more",
+                LinkUrl = "javascript:;",
+                LinkSrOnlyText = "about the impact",
+                IconClass = "ca-gov-icon-warning-triangle text-warning"
+            }
+        },
+        new
+        {
+            Heading = "Danger",
+            Model = new AlertComponentViewModel
+            {
+                EmphasisText = "Alert:",
+                Message = "Our systems are currently down.",
+                LinkText = "Learn more",
+                LinkUrl = "javascript:;",
+                LinkSrOnlyText = "about the incident",
+                IconImageUrl = "/images/alert-warning-diamond.svg",
+                IconImageAlt = "alert warning icon"
+            }
+        },
+        new
+        {
+            Heading = "Resolution",
+            Model = new AlertComponentViewModel
+            {
+                EmphasisText = "Fixed.",
+                Message = "Our systems are back up again.",
+                LinkText = "Learn more",
+                LinkUrl = "javascript:;",
+                LinkSrOnlyText = "about the resolution",
+                IconImageUrl = "/images/alert-success.svg",
+                IconImageAlt = "alert success icon"
+            }
+        }
+    };
+}
+@foreach (var alert in alerts)
+{
+    <h2 class="h4">@alert.Heading</h2>
+    <partial name="~/Views/Shared/SampleSite/Components/_Alert.cshtml" model="alert.Model" />
+}

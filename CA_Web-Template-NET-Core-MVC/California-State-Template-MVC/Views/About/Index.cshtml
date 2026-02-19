@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/Layouts/_SampleHomeLayout.cshtml";
+    ViewData["Landing"] = "Components";
+}
+
+@Html.Raw("""
+<div class="bg-primary">
+  <div class="container p-y-md">
+    <nav aria-label="You are here" class="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/" title="Home page">Home</a>
+        </li>
+        <li>About</li>
+      </ol>
+    </nav>
+    <div class="row">
+      <div class="col-lg-3">
+        <h1 class="m-t-0">About us</h1>
+      </div>
+      <div class="col-lg-7">
+        <p>
+          Our mission is to foster an inclusive and equitable society where
+          every Californian can thrive. We commit to serve the diverse needs of
+          our residents, ensure equal opportunities, and promote the well-being
+          of all individuals and communities.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container p-t-lg">
+  <div class="row">
+    <div class="col-lg-3 pe-lg-5" role="complementary">
+      <!-- Side navigation -->
+
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a href="javascript:;" class="landing active">About us</a>
+          </li>
+          <li><a href="/about/our-organization">Our organization</a></li>
+          <li><a href="/about/news">News</a></li>
+          <li><a href="/about/careers">Careers</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-lg-9 p-b-lg">
+      <h2 class="mt-lg-0">Vision</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+        pretium dapibus diam, a finibus metus congue a.
+      </p>
+
+      <h2>Goals</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+        pretium dapibus diam, a finibus metus congue a.
+      </p>
+
+      <ul>
+        <li>Goal 1</li>
+        <li>Goal 2</li>
+        <li>Goal 3</li>
+      </ul>
+
+      <h2>Learn more about us</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <a href="/about/our-organization" class="link-grid"
+            >Our organization</a
+          >
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="/about/news" class="link-grid">News</a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="/about/careers" class="link-grid">Careers</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+""")

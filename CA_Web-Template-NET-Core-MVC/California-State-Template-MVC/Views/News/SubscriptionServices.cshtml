@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Subscription services";
+    Layout = "~/Views/Shared/Layouts/_SampleHomeLayout.cshtml";
+    ViewData["Landing"] = "Components";
+}
+
+@Html.Raw("""
+<div class="container m-t-md">
+  <nav aria-label="You are here" class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/" title="Home page">Home</a>
+      </li>
+      <li>
+        <a href="/about/news" title="Newsroom page">Newsroom</a>
+      </li>
+      <li>Subscription services</li>
+    </ol>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 pe-lg-5" role="complementary">
+      <!-- Side navigation -->
+
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a href="/about/news" class="landing">Newsroom</a>
+          </li>
+          <li>
+            <a href="/about/news/articles">News articles</a>
+          </li>
+          <li>
+            <a href="/about/news/press-releases">Press releases</a>
+          </li>
+          <li><a href="/about/news/blog">Blog</a></li>
+          <li>
+            <a href="/about/news/subscription-services" class="active"
+              >Subscription services</a
+            >
+          </li>
+          <li>
+            <a href="/about/news/press-information">Press information</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-lg-9 p-b-lg">
+      <h1 class="m-t-0">Subscription services</h1>
+      <p class="lead">
+        Subscribe to receive email updates about our services. Enter your email
+        address and select Subscribe. You can subscribe or change your
+        subscriptions on the next page.
+      </p>
+      <div class="row">
+        <div class="col-lg-9">
+          <h2 class="h3">Subscribe</h2>
+
+          <label class="form-control-label" for="InputEmailRequired">
+            <span class="required-label">*</span>
+            <span class="sr-only">Required field:</span>
+            Email
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="InputEmailRequired"
+            placeholder="Email" />
+          <div class="invalid-feedback d-none">This field is required</div>
+
+          <input
+            type="submit"
+            value="Submit"
+            class="btn btn-primary btn-lg m-y-lg" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+""")

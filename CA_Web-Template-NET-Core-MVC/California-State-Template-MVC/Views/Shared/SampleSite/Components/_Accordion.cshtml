@@ -1,0 +1,15 @@
+@model AccordionComponentViewModel
+@foreach (var item in Model.Items)
+{
+    <cagov-accordion>
+      <details>
+        <summary>@item.Heading</summary>
+        <div class="accordion-body">
+@foreach (var paragraph in item.Paragraphs)
+{
+          <p>@paragraph</p>
+}
+        </div>
+      </details>
+    </cagov-accordion>
+}
