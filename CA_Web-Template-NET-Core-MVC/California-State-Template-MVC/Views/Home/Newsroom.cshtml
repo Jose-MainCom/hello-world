@@ -1,0 +1,182 @@
+﻿@{
+    ViewData["Title"] = "Newsroom";
+    Layout = "~/Views/Shared/Layouts/_SampleHomeLayout.cshtml";
+    ViewData["Landing"] = "Components";
+}
+
+@Html.Raw("""
+<div class="section-understated">
+  <div class="container p-y-md">
+    <nav aria-label="You are here" class="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/" title="Home page">Home</a>
+        </li>
+        <li><a href="/about" title="About page">About</a></li>
+        <li>Newsroom</li>
+      </ol>
+    </nav>
+    <h1 class="m-t-0">Newsroom</h1>
+  </div>
+</div>
+
+<div class="container p-t-lg">
+  <div class="row">
+    <div class="col-lg-3 pe-lg-5" role="complementary">
+      <!-- Side navigation -->
+
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a href="/about/news" class="landing active">Newsroom</a>
+          </li>
+          <li>
+            <a href="/about/news/articles">News articles</a>
+          </li>
+          <li><a href="/about/news/press-releases">Press releases</a></li>
+          <li><a href="/about/news/blog">Blog</a></li>
+          <li>
+            <a href="/about/news/subscription-services"
+              >Subscription services</a
+            >
+          </li>
+          <li>
+            <a href="/about/news/press-information">Press information</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-lg-9 p-b-lg">
+      <h2 class="m-t-0">Featured</h2>
+      <hr />
+      <!-- Featured news list -->
+      <article class="news-item">
+        <div class="row py-1">
+          <div class="col-md-4">
+            <img
+              src="/images/thumbnail-news.jpg"
+              class="img-fluid"
+              alt="news image #1" />
+          </div>
+          <div class="col-md-8">
+            <h3 class="h4 mb-2">
+              <a
+                href="/about/news/press-release-title1"
+                aria-disabled="true">
+                Press Release Title 1
+              </a>
+            </h3>
+            <p>Month 00, 0000 | Press release</p>
+          </div>
+        </div>
+        <hr />
+        <div class="row py-1">
+          <div class="col-md-4">
+            <img
+              src="/images/thumbnail-news.jpg"
+              class="img-fluid"
+              alt="news image #2" />
+          </div>
+          <div class="col-md-8">
+            <h3 class="h4 mb-2">
+              <a
+                href="/about/news/press-release-title2"
+                aria-disabled="true">
+                Press Release Title 2
+              </a>
+            </h3>
+            <p>Month 00, 0000 | Press release</p>
+          </div>
+        </div>
+        <hr />
+        <div class="row py-1">
+          <div class="col-md-4">
+            <img
+              src="/images/thumbnail-news.jpg"
+              class="img-fluid"
+              alt="news image #3" />
+          </div>
+          <div class="col-md-8">
+            <h3 class="h4 mb-2">
+              <a href="/about/news/article-title1" aria-disabled="true">
+                News Article Title 2
+              </a>
+            </h3>
+            <p>Month 00, 0000 | Press release</p>
+          </div>
+        </div>
+        <hr />
+      </article>
+      <!-- End Featured news list  -->
+      <!--End of featured news-->
+
+      <!-- News cards  -->
+      <div class="row m-t-lg">
+        <div class="col-md-6 mb-4">
+          <div
+            class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-75-hover pos-rel p-a-md">
+            <h3 class="h5 m-t-0">
+              <a
+                href="/about/news/subscription-services"
+                class="link-before no-underline"
+                aria-disabled="true">
+                Subscribe for updates
+              </a>
+            </h3>
+            <p class="font-size-16 color-black">
+              Keep up-to-date on our latest updates. Sign up for email
+              notifcations.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div
+            class="brd-gray-200 brd-solid-1 rounded-5 h-100 transition-0_3 shadow2-hover bg-white bg-gray-75-hover pos-rel p-a-md">
+            <h3 class="h5 m-t-0">
+              <a
+                href="/about/news/blog-title1"
+                class="link-before no-underline"
+                aria-disabled="true">
+                Blog Post Title 1
+              </a>
+            </h3>
+            <p class="font-size-16 color-black">Month 00, 0000</p>
+            <p class="font-size-16 color-black">
+              Short 1 - 2 sentence description promoting this blog post.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- End News cards  -->
+
+      <!-- News list  -->
+      <h2 class="h3">Latest news</h2>
+      <hr class="m-y-md" />
+      <h3 class="lead font-weight-700">
+        <a href="/about/news/article-title1" aria-disabled="true">
+          News Article Title 1
+        </a>
+      </h3>
+      <p>Month 00, 0000 | News</p>
+      <hr class="m-y-md" />
+      <h3 class="lead font-weight-700">
+        <a href="/about/news/article-title2" aria-disabled="true">
+          News Article Title 2
+        </a>
+      </h3>
+      <p>Month 00, 0000 | News</p>
+      <hr class="m-y-md" />
+      <h3 class="lead font-weight-700">
+        <a href="/about/news/article-title3" aria-disabled="true">
+          News Article Title 3
+        </a>
+      </h3>
+      <p>Month 00, 0000 | News</p>
+      <hr class="m-y-md" />
+      <!-- End News list  -->
+      <p class="m-b-lg"><a href="/about/news">View all</a></p>
+    </div>
+  </div>
+</div>
+""")
