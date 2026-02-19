@@ -19,11 +19,6 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "sample-html-pages",
-    pattern: "{**path:regex(.*\\.html)}",
-    defaults: new { controller = "Home", action = "Page" });
-
 app.MapDefaultControllerRoute();
 
 app.Run();
