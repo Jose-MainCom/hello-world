@@ -1,0 +1,20 @@
+@{
+    Layout = "~/Views/Shared/Layouts/_SampleBaseLayout.cshtml";
+}
+<div id="main-content" class="main-content">
+  <div class="container p-t-md">
+    <main class="main-primary" id="main">
+      <nav aria-label="You are here" class="breadcrumbs">
+        <ol>
+          <li>
+            <a href="/index.html" title="Home page">Home</a>
+          </li>
+          <li>@ViewData["Title"]</li>
+        </ol>
+      </nav>
+      <div class="row">
+        <div class="col-md-10 p-b-lg mx-auto">@RenderBody()</div>
+      </div>
+    </main>
+  </div>
+</div>

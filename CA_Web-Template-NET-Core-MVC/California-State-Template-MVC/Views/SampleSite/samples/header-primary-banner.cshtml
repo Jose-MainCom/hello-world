@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Header Primary Banner";
+    Layout = "~/Views/Shared/Layouts/_SampleSamplesLayout.cshtml";
+    ViewData["Landing"] = "Samples";
+}
+
+@Html.Raw("""
+<div class="header-primary-banner hidden-print">
+  <div class="container">
+    <div class="row my-4">
+      <div class="col my-auto">
+        <h1 class="color-white font-weight-600">State Template V6</h1>
+        <div
+          class="color-white lead m-b-lg line-height-1-6em"
+          style="max-width:22em;">
+          Use the latest version of the template to develop your websites and
+          applications
+        </div>
+        <div class="btn-row p-b">
+          <a href="/download-and-setup.html" class="btn btn-primary"
+            >Download and setup</a
+          >
+        </div>
+      </div>
+      <div class="col my-auto">
+        <img
+          class="py-3"
+          width="100%"
+          src="/images/header-bear.svg"
+          alt=""
+          style="aspect-ratio: 1146 / 827" />
+      </div>
+    </div>
+  </div>
+</div>
+""")

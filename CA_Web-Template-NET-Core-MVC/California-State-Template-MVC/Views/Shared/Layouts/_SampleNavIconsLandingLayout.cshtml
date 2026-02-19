@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <partial name="~/Views/Shared/SampleSite/_HeadIncludes.cshtml" />
+    @await RenderSectionAsync("Head", required: false)
+</head>
+<body class="primary">
+    <header role="banner" id="header" class="global-header fixed">
+      <div id="skip-to-content">
+        <a href="#main-content">Skip to Main Content</a>
+      </div>
+      <partial name="~/Views/Shared/SampleSite/_UtilityHeader.cshtml" />
+      <partial name="~/Views/Shared/SampleSite/_SiteHeaderIcons.cshtml" />
+      <partial name="~/Views/Shared/SampleSite/_MobileControls.cshtml" />
+      <div class="navigation-search">
+        <partial name="~/Views/Shared/SampleSite/_NavigationIcons.cshtml" />
+        <div id="head-search" class="search-container featured-search">
+          <partial name="~/Views/Shared/SampleSite/_Search.cshtml" />
+        </div>
+      </div>
+    </header>
+
+    <div id="main-content" class="main-content">
+      <main class="main-primary" id="main">@RenderBody()</main>
+    </div>
+
+    <partial name="~/Views/Shared/SampleSite/_GlobalFooter.cshtml" />
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

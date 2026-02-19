@@ -1,0 +1,115 @@
+@{
+    ViewData["Title"] = "News Articles";
+    Layout = "~/Views/Shared/Layouts/_SampleHomeLayout.cshtml";
+    ViewData["Landing"] = "Components";
+}
+
+@Html.Raw("""
+<div class="container m-t-md">
+  <nav aria-label="You are here" class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/index.html" title="Home page">Home</a>
+      </li>
+      <li>
+        <a href="/about/news/index.html" title="Newsroom page">Newsroom</a>
+      </li>
+      <li>News Articles</li>
+    </ol>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 pe-lg-5" role="complementary">
+      <!-- Side navigation -->
+
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a href="/about/news/index.html" class="landing">Newsroom</a>
+          </li>
+          <li>
+            <a href="/about/news/articles.html" class="active">News articles</a>
+          </li>
+          <li><a href="/about/news/press-releases.html">Press releases</a></li>
+          <li><a href="/about/news/blog.html">Blog</a></li>
+          <li>
+            <a href="/about/news/subscription-services.html"
+              >Subscription services</a
+            >
+          </li>
+          <li>
+            <a href="/about/news/press-information.html">Press information</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-lg-9 p-b-lg">
+      <h1 class="m-t-0">News Articles</h1>
+      <!--End of featured news-->
+
+      <!-- News list  -->
+      <h2 class="h3">Month 0000</h2>
+      <hr class="m-y-md" />
+      <h3 class="lead font-weight-700">
+        <a href="/about/news/article-title1.html" aria-disabled="true">
+          News Article Title 1
+        </a>
+      </h3>
+      <p>Month 00, 0000 | News</p>
+      <hr class="m-y-md" />
+      <h3 class="lead font-weight-700">
+        <a href="/about/news/article-title2.html" aria-disabled="true">
+          News Article Title 2
+        </a>
+      </h3>
+      <p>Month 00, 0000 | News</p>
+
+      <h2 class="h3">Month 0000</h2>
+      <hr class="m-y-md" />
+      <h3 class="lead font-weight-700">
+        <a href="/about/news/article-title1.html" aria-disabled="true">
+          News Article Title 1
+        </a>
+      </h3>
+      <p>Month 00, 0000 | News</p>
+      <hr class="m-y-md" />
+      <h3 class="lead font-weight-700">
+        <a href="/about/news/article-title2.html" aria-disabled="true">
+          News Article Title 2
+        </a>
+      </h3>
+      <p>Month 00, 0000 | News</p>
+      <hr class="m-y-md" />
+      <h3 class="lead font-weight-700">
+        <a href="/about/news/article-title3.html" aria-disabled="true">
+          News Article Title 3
+        </a>
+      </h3>
+      <p>Month 00, 0000 | News</p>
+      <hr class="m-y-md" />
+      <h3 class="lead font-weight-700">
+        <a href="/about/news/article-title1.html" aria-disabled="true">
+          News Article Title 1
+        </a>
+      </h3>
+      <p>Month 00, 0000 | News</p>
+      <hr class="m-y-md" />
+      <h3 class="lead font-weight-700">
+        <a href="/about/news/article-title2.html" aria-disabled="true">
+          News Article Title 2
+        </a>
+      </h3>
+      <p>Month 00, 0000 | News</p>
+      <!-- End News list  -->
+      <div class="m-t-lg">
+        <!--pagination-->
+        <cagov-pagination
+          data-current-page="1"
+          data-total-pages="99"></cagov-pagination>
+      </div>
+    </div>
+  </div>
+</div>
+""")

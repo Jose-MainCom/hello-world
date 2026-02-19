@@ -1,0 +1,466 @@
+@{
+    ViewData["Title"] = "Components and patterns";
+    Layout = null;
+    ViewData["Landing"] = "Components";
+}
+
+@Html.Raw("""
+<style>
+  body {
+  margin: 0;
+  padding: 0;
+}
+
+div.cagov-utility-header {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    sans-serif;
+  color: #3b3a48;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  /* Global utility styles */
+  :focus {
+    outline: 2px solid #0b8ee5;
+  }
+
+  & a {
+    color: #046b99;
+
+    &:hover,
+    &:focus {
+      color: #035376;
+    }
+  }
+
+  .cagov-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  > div.cagov-utility-header__1-utility {
+    background-color: #f5f9fa;
+    min-height: 42px;
+    padding: 0.25rem 0;
+
+    > div.cagov-utility-header__2-container {
+      width: 100%;
+      padding-right: 12px;
+      padding-left: 12px;
+      margin-right: auto;
+      margin-left: auto;
+
+      @media (width >= 576px) {
+        max-width: 540px;
+      }
+      @media (width >= 768px) {
+        max-width: 720px;
+      }
+      @media (width >= 992px) {
+        max-width: 960px;
+      }
+      @media (width >= 1200px) {
+        max-width: 1176px;
+      }
+
+      > div.cagov-utility-header__3-utility-bar {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        > details[name="cagov-utility-header__buttongroup"] {
+          + div {
+            display: none;
+          }
+
+          &[open] + div {
+            display: block;
+          }
+        }
+
+        > div.cagov-utility-header__4-logo {
+          display: inline-block;
+          flex-grow: 1;
+          flex-shrink: 0;
+          align-self: center;
+
+          > a > svg {
+            vertical-align: middle;
+            aspect-ratio: 9 / 5;
+            display: inline-block;
+            width: 50px;
+          }
+        }
+
+        > details.cagov-utility-header__4-menu-button {
+          > summary {
+            margin-left: auto;
+            background: none;
+            border: none;
+            color: #3b3a48;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.35rem 0.5rem;
+            list-style: none;
+            text-decoration: underline;
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            right: 0.5rem;
+            min-height: 1.875rem;
+
+            &:hover,
+            &:focus {
+              color: #000;
+            }
+
+            &::-webkit-details-marker {
+              display: none;
+            }
+
+            &::after {
+              margin-left: 0.5rem;
+              content: "";
+              display: inline-block;
+              text-decoration: none;
+              position: relative;
+              width: 0.4rem;
+              height: 0.4rem;
+              border-top: 1px solid #000;
+              border-left: 1px solid #000;
+              transform: rotate(225deg);
+              transition: 200ms;
+              vertical-align: middle;
+            }
+          }
+
+          &[open] > summary::after {
+            transform: rotate(45deg);
+            top: 2px;
+          }
+        }
+
+        > details.cagov-utility-header__4-search-button {
+          > summary {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            min-height: 1.875rem;
+
+            &:hover,
+            &:focus {
+              color: #000;
+            }
+
+            &::-webkit-details-marker {
+              /* for Safari */
+              display: none;
+            }
+
+            /* Draws the "X" icon lines */
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 3px;
+              background: #3b3a48;
+              border-radius: 2px;
+              transition:
+                transform 0.3s,
+                opacity 0.3s;
+              opacity: 0;
+            }
+
+            > svg {
+              transition: transform 0.3s;
+            }
+          }
+
+          &[open] > summary {
+            > svg {
+              transform: scale(0);
+            }
+
+            &::before,
+            &::after {
+              opacity: 1;
+            }
+
+            &::before {
+              transform: rotate(45deg);
+            }
+
+            &::after {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+
+        /* Collapsible content styles */
+        > div.cagov-utility-header__4-utility-menu,
+        > div.cagov-utility-header__4-search {
+          background-color: #f5f9fa;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          line-height: 1.5;
+          width: 100%;
+          order: 1;
+        }
+
+        /* Navigation styles */
+        > div.cagov-utility-header__4-utility-menu > nav > ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding: 0;
+          position: relative;
+          left: 0.35rem;
+
+          > li > a {
+            padding: 0.35rem;
+          }
+
+          @media (width >= 540px) {
+            flex-direction: row;
+            gap: 1.5rem;
+          }
+        }
+
+        /* Search styles */
+        > div.cagov-utility-header__4-search > form {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+
+          > input[type="search"] {
+            font-size: 1.1rem;
+            width: 100%;
+            max-height: 38px;
+            padding: 0 10px;
+            transition: border 0.4s;
+            border: 1px solid #72717c;
+            border-radius: 5px 0 0 5px;
+            height: 38px;
+            outline-offset: -2px;
+          }
+
+          > button[type="submit"] {
+            outline-offset: -4px;
+            outline-color: #85cbf9;
+            background-color: #72717c;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            padding: 0 12px;
+            border: 1px solid #72717c;
+            min-height: 38px;
+            margin-left: -1px;
+
+            > svg {
+              fill: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+</style>
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<div class="cagov-utility-header">
+  <div class="cagov-utility-header__1-utility">
+    <div class="cagov-utility-header__2-container">
+      <div class="cagov-utility-header__3-utility-bar">
+        <!-- CA.gov Logo -->
+        <div class="cagov-utility-header__4-logo">
+          <a href="https://www.ca.gov"
+            ><span class="cagov-sr-only" lang="en">CA.gov website</span>
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 531 300"
+              title="CA.gov Logo">
+              <path
+                fill="#2F85B0"
+                d="M316 122h5c10 0 21 4 31 8c1 1 3 1 4 2c1 0 1 0 2 1l22-57l21 53h12c14 0 27 2 39 5L405 12h-51l-43 111c1-1 3-1 5-1z" />
+              <path
+                fill="#B91F39"
+                d="M181 94l-9 28h-31l24 17-8 27l24-16l24 16-8-28l23-17h-30z" />
+              <path
+                fill="#693B17"
+                d="M518 227c-1-8-7-25-13-30c3-8-1-11-3-14-1-1-5-3-7-3-6-10-20-18-39-24-12-4-27-6-44-6h-8c-15 1-38 4-44 4-2 0-8-3-15-5-8-3-17-6-24-6h-2c-6 1-21 10-27 13-4 2-16 7-20 10h-3c-9 3-15 13-18 15c0-1-4-6-8-6h-2c-6 2-5 7-5 9-1 0-3-2-6-2-1 0-2 0-4 1-6 3-3 9-4 11-2 3-10 10-12 15-1 2 0 8-1 10-2 6-16 17-17 19c0 1 3 5 8 8c4 3 9 6 12 7c8 0 25-3 29-4c1 0 3 1 6 1c2 1 5 1 8 1h3c4-1 7-3 9-5c4-4 6-8 10-10c3-1 7-2 11-2c2 0 3 0 5 1-7 12-5 27-7 30-3 2-5 5-6 7-6 9-6 16-9 18-1 0-2 1-3 1-3 0-7-1-10-1h-2c-3 1-12 9-9 11h40l8-7h20c2 0 2-3 10-8c10-4 5-22 17-37c0 0 4-3 5-3c4 0 11 8 37 8c26 0 32-9 36-9c2 0 5 3 5 4-12 20 18 42 15 43-1 0-4-2-8-2-2 0-4 0-6 1-5 2-9 8-5 9h41c1 0 1-3 1-6v-4c1-2 2-7 5-11c3-3 5-6 8-6c1 0 2 0 3 1c5 3 19 5 26 7c3 1 5 2 5 4c0 1-1 1-2 1h-1c-2 0-4-1-7-1-1 0-2 0-3 1-3 1-7 5-8 8c0 1 0 3 1 3h31c4 0 2-7 10-23c1-4-10-11-12-19c0-6-1-17-1-28z" />
+              <path
+                fill="#2F85B0"
+                d="M150 299c32 0 55-6 76-18l5-11c-7 1-14 2-20 2h-3l-2-1c-5-1-12-5-19-11-3-2-7-6-11-11-8 2-16 3-26 3-60 1-103-42-103-102C47 92 92 47 150 47c32 0 61 13 87 39l19-47c-29-24-66-38-104-38C110 1 73 15 45 42C16 69 0 107 0 150c0 87 62 149 150 149z" />
+              <path
+                fill="#326130"
+                d="M150 299c32 0 55-6 76-18l5-11c-7 1-14 2-20 2h-3l-2-1c-5-1-12-5-19-11-3-2-7-6-11-11-8 2-16 3-26 3-42 0-74-20-91-51H8c19 60 72 98 142 98z" /></svg></a
+          ><!-- end CA.gov Logo -->
+        </div>
+
+        <!--cagov menu-->
+        <details
+          class="cagov-utility-header__4-menu-button"
+          name="cagov-utility-header__buttongroup">
+          <summary lang="en">CA.gov menu</summary>
+        </details>
+
+        <!--cagov collapsible menu content-->
+        <div class="cagov-utility-header__4-utility-menu">
+          <nav aria-label="CA.gov navigation">
+            <ul>
+              <li>
+                <a href="https://www.ca.gov/services/">Services</a>
+              </li>
+              <li>
+                <a href="https://www.ca.gov/departments/">Departments</a>
+              </li>
+              <li>
+                <a href="https://www.ca.gov/about-california/"
+                  >About California</a
+                >
+              </li>
+              <li>
+                <a href="https://www.ca.gov/support/">Get help</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!--end cagov collapsible menu content-->
+
+        <!--end cagov menu-->
+
+        <!--Search-->
+
+        <details
+          class="cagov-utility-header__4-search-button"
+          name="cagov-utility-header__buttongroup">
+          <summary>
+            <span class="cagov-sr-only" lang="en">CA.gov search</span>
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 2400 2400">
+              <path
+                d="M2253 1833l-71-59-224-181-317-262c65-116 99-245 99-376c0-195-75-390-226-541-147-147-342-219-541-219-411 0-760 349-760 760c0 414 343 764 757 764c154 0 308-46 439-136l326 270l223 180l77 64c38 31 93 26 124-12l106-128c31-37 26-93-12-124zm-945-546c-92 92-212 137-335 137-250 0-466-212-466-469c0-250 212-466 466-466c260 0 472 212 472 466c0 120-48 240-137 332z" />
+            </svg>
+          </summary>
+        </details>
+        <!--End search-->
+
+        <!-- collapsible search content-->
+        <div class="cagov-utility-header__4-search">
+          <form
+            action="https://www.ca.gov/search/"
+            method="get"
+            role="search"
+            aria-label="Search CA.gov">
+            <label
+              id="cagov-search-label"
+              for="cagov-search-input"
+              class="cagov-sr-only"
+              lang="en"
+              >Search CA.gov</label
+            >
+            <input
+              type="search"
+              id="cagov-search-input"
+              name="q"
+              placeholder="Search CA.gov"
+              aria-describedby="cagov-search-label" />
+            <button type="submit" aria-label="Submit search">
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 2400 2400">
+                <path
+                  d="M2253 1833l-71-59-224-181-317-262c65-116 99-245 99-376c0-195-75-390-226-541-147-147-342-219-541-219-411 0-760 349-760 760c0 414 343 764 757 764c154 0 308-46 439-136l326 270l223 180l77 64c38 31 93 26 124-12l106-128c31-37 26-93-12-124zm-945-546c-92 92-212 137-335 137-250 0-466-212-466-469c0-250 212-466 466-466c260 0 472 212 472 466c0 120-48 240-137 332z" />
+              </svg>
+            </button>
+          </form>
+        </div>
+        <!-- end collapsible search content-->
+      </div>
+      <!-- .cagov-utility-bar -->
+    </div>
+    <!-- .cagov-container -->
+  </div>
+  <!-- .cagov-utility -->
+</div>
+<!-- .cagov-utility-header -->
+
+
+<script>
+  //@ts-check
+document.addEventListener("DOMContentLoaded", () => {
+  // Polyfill to support grouping <details> elements via the NAME property.
+  // Safaroi 16.5 and earlier do not support details.name
+
+  // Test to see if browser supports details.name
+  const test = document.createElement("details");
+  test.setAttribute("name", "x");
+  const supportsName = test.name === "x";
+
+  if (!supportsName) {
+    /**
+     * Selects all <details> elements that have a NAME attribute.
+     * @type {NodeListOf<HTMLDetailsElement>}
+     */
+    const accordions = document.querySelectorAll("details[name]");
+    accordions.forEach(details => {
+      details.addEventListener("toggle", () => {
+        if (details.open) {
+          accordions.forEach(other => {
+            if (
+              other.open &&
+              other !== details &&
+              other.getAttribute("name") === details.getAttribute("name")
+            ) {
+              other.open = false;
+              console.log("POLYFILL: details.name closed");
+            }
+          });
+        }
+      });
+    });
+  }
+  // End details.name polyfill
+});
+
+</script>
+""")

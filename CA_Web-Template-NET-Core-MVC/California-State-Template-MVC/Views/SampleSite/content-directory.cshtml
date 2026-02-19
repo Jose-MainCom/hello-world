@@ -1,0 +1,133 @@
+@{
+    ViewData["Title"] = "Content directory";
+    Layout = "~/Views/Shared/Layouts/_SampleHomeLayout.cshtml";
+    ViewData["Landing"] = "About";
+}
+
+@Html.Raw("""
+<div class="bg-gray-lightest">
+  <div class="container p-y-md">
+    <nav aria-label="You are here" class="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/index.html" title="Home page">Breadcrumb 1</a>
+        </li>
+        <li>
+          <a href="/components-patterns.html" title="Home page">Breadcrumb 2</a>
+        </li>
+        <li>Sub-topic</li>
+      </ol>
+    </nav>
+    <h1 class="m-t-0">Sub-topic</h1>
+  </div>
+</div>
+
+<div class="container p-t-lg">
+  <div class="row">
+    <div class="col-lg-3 pe-lg-5" role="complementary">
+      <!-- Side navigation -->
+
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a href="/content-directory.html" class="landing active"
+              >Top task</a
+            >
+          </li>
+          <li>
+            <a href="/top-task-1/content-page-1.html">Content page 1</a>
+          </li>
+          <li>
+            <ul>
+              <li>
+                <a href="/top-task-1/content-page-2.html">Content page 2</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/top-task-1/content-page-3.html">Content page 3</a></li>
+          <li><a href="/top-task-1/content-page-4.html">Content page 4</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-lg-9 p-b-lg">
+      <p class="lead">
+        Introductory sentence(s) about this topic. Use this template if you have
+        deep content and need more than the site and side navigation. Typically
+        only sites with a large volume of content will use this template.
+      </p>
+
+      <div class="row p-y-md">
+        <div class="col-lg-5">
+          <h2 class="m-t-0 h4">Category</h2>
+        </div>
+        <div class="col-lg-7">
+          <ul>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row p-y-md">
+        <div class="col-lg-5">
+          <h2 class="m-t-0 h4">Category</h2>
+        </div>
+        <div class="col-lg-7">
+          <ul>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row p-y-md">
+        <div class="col-lg-5">
+          <h2 class="m-t-0 h4">Category</h2>
+        </div>
+        <div class="col-lg-7">
+          <ul>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row p-y-md">
+        <div class="col-lg-5">
+          <h2 class="m-t-0 h4">Category</h2>
+        </div>
+        <div class="col-lg-7">
+          <ul>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+            <li><a href="javascript:;">Link</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </div>
+</div>
+""")

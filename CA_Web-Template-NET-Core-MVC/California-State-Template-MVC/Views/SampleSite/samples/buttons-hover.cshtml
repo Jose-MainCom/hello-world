@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Buttons Hover";
+    Layout = "~/Views/Shared/Layouts/_SampleSamplesLayout.cshtml";
+    ViewData["Landing"] = "Samples";
+}
+
+@Html.Raw("""
+<div class="btn-row p-b">
+  <a class="btn btn-primary btn-hover" role="button">Primary color</a>
+  <a class="btn btn-highlight btn-hover" role="button">Highlight color</a>
+  <a class="btn btn-standout btn-hover" role="button">Standout color</a>
+</div>
+""")

@@ -1,0 +1,92 @@
+/* -----------------------------------------
+   TRINITY COLOR THEME
+----------------------------------------- */
+
+:root {
+  /* color variations are hardcoded for older browsers
+ color-mix is used for the newer browsers */
+
+  /* Highlight */
+  --color-p1: #c19e73;
+  --color-p1-dark: #bb9465;
+  --color-p1-darker: #b68d5a;
+  --color-p1-darkest: #a47b49;
+  --color-p1-light: #cdb18f;
+  --color-p1-lighter: #dac5ab;
+  --color-p1-lightest: #e6d8c7;
+
+  /* Primary */
+  --color-p2: #446a7c;
+  --color-p2-dark: #3d5f6f;
+  --color-p2-darker: #375665;
+  --color-p2-darkest: #2b434e;
+  --color-p2-light: #698896;
+  --color-p2-lighter: #8fa6b0;
+  --color-p2-lightest: #b4c3cb;
+
+  /* Standout */
+  --color-p3: #21272a;
+  --color-p3-dark: #181c1f;
+  --color-p3-darker: #111416;
+  --color-p3-darkest: #020202;
+  --color-p3-light: #4d5255;
+  --color-p3-lighter: #7a7d7f;
+  --color-p3-lightest: #a6a9aa;
+
+  /* Secondary 1 */
+  --color-s1: #eff5f8;
+  --color-s1-darker: #e4eef3;
+  --color-s1-lighter: #f7fafc;
+
+  /* Secondary 2 */
+  --color-s2: #e2dfda;
+  --color-s2-dark: #d2cec6;
+  --color-s2-darker: #c3bcb2;
+
+  /* Secondary 3 */
+  --color-s3: #ccc8bf;
+  --color-s3-dark: #bcb7ab;
+  --color-s3-light: #e0ded9;
+  --color-s3-lighter: #ebe9e5;
+
+  /* Megamenu sub navigation background */
+  --sub-nav-bg: var(--color-s1);
+
+  /*  Mobile navigation draver background */
+  --mobile-drawer: var(--color-p3);
+  --mobile-drawer-active: var(--color-p3-light);
+}
+
+/* color-mix is used for the newer browsers */
+@supports (color: color-mix) {
+  :root {
+    --color-p1-dark: color-mix(in srgb, var(--color-p1), #000 15%);
+    --color-p1-darker: color-mix(in srgb, var(--color-p1), #000 30%);
+    --color-p1-darkest: color-mix(in srgb, var(--color-p1), #000 60%);
+    --color-p1-light: color-mix(in srgb, var(--color-p1), #fff 15%);
+    --color-p1-lighter: color-mix(in srgb, var(--color-p1), #fff 30%);
+    --color-p1-lightest: color-mix(in srgb, var(--color-p1), #fff 60%);
+    --color-p2-dark: color-mix(in srgb, var(--color-p2), #000 15%);
+    --color-p2-darker: color-mix(in srgb, var(--color-p2), #000 30%);
+    --color-p2-darkest: color-mix(in srgb, var(--color-p2), #000 60%);
+    --color-p2-light: color-mix(in srgb, var(--color-p2), #fff 15%);
+    --color-p2-lighter: color-mix(in srgb, var(--color-p2), #fff 30%);
+    --color-p2-lightest: color-mix(in srgb, var(--color-p2), #fff 60%);
+    --color-p3-dark: color-mix(in srgb, var(--color-p3), #000 15%);
+    --color-p3-darker: color-mix(in srgb, var(--color-p3), #000 30%);
+    --color-p3-darkest: color-mix(in srgb, var(--color-p3), #000 60%);
+    --color-p3-light: color-mix(in srgb, var(--color-p3), #fff 15%);
+    --color-p3-lighter: color-mix(in srgb, var(--color-p3), #fff 30%);
+    --color-p3-lightest: color-mix(in srgb, var(--color-p3), #fff 60%);
+    --color-s1-darker: color-mix(in srgb, var(--color-s1), #000 5%);
+    --color-s1-lighter: color-mix(in srgb, var(--color-s1), #fff 10%);
+    --color-s2-dark: color-mix(in srgb, var(--color-s2), #000 15%);
+    --color-s2-darker: color-mix(in srgb, var(--color-s2), #000 30%);
+    --color-s3-dark: color-mix(in srgb, var(--color-s3), #000 15%);
+    --color-s3-light: color-mix(in srgb, var(--color-s3), #fff 45%);
+    --color-s3-lighter: color-mix(in srgb, var(--color-s3), #fff 60%);
+    --sub-nav-bg: var(--color-s1);
+    --mobile-drawer: var(--color-p3);
+    --mobile-drawer-active: var(--color-p3-light);
+  }
+}

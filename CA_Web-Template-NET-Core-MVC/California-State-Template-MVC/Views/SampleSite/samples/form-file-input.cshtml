@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Form File Input";
+    Layout = "~/Views/Shared/Layouts/_SampleSamplesLayout.cshtml";
+    ViewData["Landing"] = "Samples";
+}
+
+@Html.Raw("""
+<!--Custom file Input-->
+<label for="inputGroupFile02" class="mb-1">Upload your file</label>
+<div class="input-group mb-3">
+  <input type="file" class="form-control" id="inputGroupFile02" />
+</div>
+<div class="feedback small">Feedback text.</div>
+""")

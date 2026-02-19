@@ -1,0 +1,81 @@
+@{
+    ViewData["Title"] = "Press information";
+    Layout = "~/Views/Shared/Layouts/_SampleHomeLayout.cshtml";
+    ViewData["Landing"] = "Components";
+}
+
+@Html.Raw("""
+<div class="container m-t-md">
+  <nav aria-label="You are here" class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="/index.html" title="Home page">Home</a>
+      </li>
+      <li>
+        <a href="/about/news/index.html" title="Newsroom page">Newsroom</a>
+      </li>
+      <li>Press information</li>
+    </ol>
+  </nav>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 pe-lg-5" role="complementary">
+      <!-- Side navigation -->
+
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a href="/about/news/index.html" class="landing">Newsroom</a>
+          </li>
+          <li>
+            <a href="/about/news/articles.html">News articles</a>
+          </li>
+          <li>
+            <a href="/about/news/press-releases.html">Press releases</a>
+          </li>
+          <li><a href="/about/news/blog.html">Blog</a></li>
+          <li>
+            <a href="/about/news/subscription-services.html"
+              >Subscription services</a
+            >
+          </li>
+          <li>
+            <a href="/about/news/press-information.html" class="active"
+              >Press information</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-lg-9 p-b-lg">
+      <h1 class="m-t-0">Press information</h1>
+      <p class="lead">Information specifically for press and media partners.</p>
+
+      <h2>Commonly requested content</h2>
+
+      <p>These are items our partners often request.</p>
+
+      <ul>
+        <li><a href="javascript:;">Content 1</a></li>
+        <li><a href="javascript:;">Content 2</a></li>
+        <li><a href="javascript:;">Content 3</a></li>
+      </ul>
+
+      <h2>Public Affairs contacts</h2>
+      <p>
+        This contact information is only for press and media partners. We don’t
+        have access to personal information to help individuals.
+      </p>
+      <ul>
+        <li>
+          <span class="bold">Email:</span>
+          <a href="mailto:email@department.ca.gov">email@department.ca.gov</a>
+        </li>
+        <li><span class="bold">Phone:</span> (800) 888-8888</li>
+      </ul>
+    </div>
+  </div>
+</div>
+""")

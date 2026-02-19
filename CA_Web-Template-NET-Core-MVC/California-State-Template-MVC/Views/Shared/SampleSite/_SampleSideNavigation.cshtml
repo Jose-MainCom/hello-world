@@ -1,0 +1,115 @@
+@{
+    var entries = new (string Url, string Title)[]
+    {
+        ("/samples/accordion.html", "Accordion"),
+        ("/samples/accordion-list.html", "Accordion List"),
+        ("/samples/accordion-side-navigation.html", "Accordion Side Navigation"),
+        ("/samples/alert.html", "Alert"),
+        ("/samples/alert-banner.html", "Alert Banner"),
+        ("/samples/banner.html", "Banner"),
+        ("/samples/blockquote.html", "Blockquote"),
+        ("/samples/blockquote-no-graphic.html", "Blockquote No Graphic"),
+        ("/samples/blockquote-prominent.html", "Blockquote Prominent"),
+        ("/samples/blockquote-pull.html", "Blockquote Pull"),
+        ("/samples/blockquote-with-image.html", "Blockquote With Image"),
+        ("/samples/bootstrap-side-navigation-primary.html", "Bootstrap Side Navigation Primary"),
+        ("/samples/breadcrumb.html", "Breadcrumb"),
+        ("/samples/buttons.html", "Buttons"),
+        ("/samples/buttons-disabled.html", "Buttons Disabled"),
+        ("/samples/buttons-hover.html", "Buttons Hover"),
+        ("/samples/buttons-outline.html", "Buttons Outline"),
+        ("/samples/buttons-sizes.html", "Buttons Sizes"),
+        ("/samples/card-default.html", "Card Default"),
+        ("/samples/card-grid-basic.html", "Card Grid Basic"),
+        ("/samples/card-grid-icons.html", "Card Grid Icons"),
+        ("/samples/card-grid-images.html", "Card Grid Images"),
+        ("/samples/card-icon.html", "Card Icon"),
+        ("/samples/card-image.html", "Card Image"),
+        ("/samples/card-legacy.html", "Card Legacy"),
+        ("/samples/countdown-timer.html", "Countdown Timer"),
+        ("/samples/executive-profile.html", "Executive Profile"),
+        ("/samples/executive-profile-dark.html", "Executive Profile Dark"),
+        ("/samples/executive-profile-transparent.html", "Executive Profile Transparent"),
+        ("/samples/external-links.html", "External Links"),
+        ("/samples/feature-card.html", "Feature Card"),
+        ("/samples/featured-search.html", "Featured Search"),
+        ("/samples/form-checkbox.html", "Form Checkbox"),
+        ("/samples/form-dropdown.html", "Form Dropdown"),
+        ("/samples/form-file-input.html", "Form File Input"),
+        ("/samples/form-label.html", "Form Label"),
+        ("/samples/form-radio.html", "Form Radio"),
+        ("/samples/form-textarea.html", "Form Textarea"),
+        ("/samples/form-textarea-required.html", "Form Textarea Required"),
+        ("/samples/form-textfield.html", "Form Textfield"),
+        ("/samples/form-textfield-required.html", "Form Textfield Required"),
+        ("/samples/gradient-linear.html", "Gradient Linear"),
+        ("/samples/gradient-radial.html", "Gradient Radial"),
+        ("/samples/header-primary-banner.html", "Header Primary Banner"),
+        ("/samples/horizontal-separator.html", "Horizontal Separator"),
+        ("/samples/link-grid.html", "Link Grid"),
+        ("/samples/list-ordered.html", "List Ordered"),
+        ("/samples/list-unordered.html", "List Unordered"),
+        ("/samples/megamenu.html", "Megamenu"),
+        ("/samples/modal.html", "Modal"),
+        ("/samples/nav-side-accordion.html", "Nav Side Accordion"),
+        ("/samples/news-article.html", "News Article"),
+        ("/samples/news-block.html", "News Block"),
+        ("/samples/news-cards.html", "News Cards"),
+        ("/samples/news-featured-banner.html", "News Featured Banner"),
+        ("/samples/news-list.html", "News List"),
+        ("/samples/news-list-extended.html", "News List Extended"),
+        ("/samples/news-list-featured.html", "News List Featured"),
+        ("/samples/number-counter.html", "Number Counter"),
+        ("/samples/page-navigation.html", "Page Navigation"),
+        ("/samples/page-navigation-more.html", "Page Navigation More"),
+        ("/samples/pagination.html", "Pagination"),
+        ("/samples/progress-bar.html", "Progress Bar"),
+        ("/samples/progress-block.html", "Progress Block"),
+        ("/samples/progress-block-bold.html", "Progress Block Bold"),
+        ("/samples/section-primary.html", "Section Primary"),
+        ("/samples/section-standout.html", "Section Standout"),
+        ("/samples/side-navigation.html", "Side Navigation"),
+        ("/samples/side-navigation-level1.html", "Side Navigation Level1"),
+        ("/samples/side-navigation-level2.html", "Side Navigation Level2"),
+        ("/samples/side-navigation-level3.html", "Side Navigation Level3"),
+        ("/samples/site-footer.html", "Site Footer"),
+        ("/samples/site-header-sample-site.html", "Site Header Sample Site"),
+        ("/samples/site-header-sample-site-news.html", "Site Header Sample Site News"),
+        ("/samples/social-media-icons.html", "Social Media Icons"),
+        ("/samples/step-list.html", "Step List"),
+        ("/samples/table.html", "Table"),
+        ("/samples/table-default.html", "Table Default"),
+        ("/samples/table-striped.html", "Table Striped"),
+        ("/samples/tabs.html", "Tabs"),
+        ("/samples/timeline.html", "Timeline"),
+    };
+
+    var currentPath = Context.Request.Path.Value ?? "/";
+    if (string.IsNullOrWhiteSpace(currentPath) || currentPath == "/")
+    {
+        currentPath = "/index.html";
+    }
+
+    currentPath = currentPath.TrimEnd('/' );
+    if (!currentPath.EndsWith(".html", StringComparison.OrdinalIgnoreCase))
+    {
+        currentPath += ".html";
+    }
+}
+
+<nav aria-labelledby="navigation-list" class="side-navigation sticky-6">
+  <ul class="list-navigation">
+    <li>
+      <a href="javascript:;" aria-hidden="true" class="d-none">Samples</a>
+    </li>
+@foreach (var entry in entries)
+{
+    var activeClass = string.Equals(currentPath, entry.Url, StringComparison.OrdinalIgnoreCase)
+        ? "active"
+        : string.Empty;
+    <li>
+      <a href="@entry.Url" class="@activeClass">@entry.Title</a>
+    </li>
+}
+  </ul>
+</nav>

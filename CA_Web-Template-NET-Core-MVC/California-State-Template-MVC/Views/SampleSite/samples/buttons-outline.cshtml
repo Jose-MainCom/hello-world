@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Buttons Outline";
+    Layout = "~/Views/Shared/Layouts/_SampleSamplesLayout.cshtml";
+    ViewData["Landing"] = "Samples";
+}
+
+@Html.Raw("""
+<div class="btn-row p-b">
+  <a href="" class="btn btn-outline-primary" role="button">Primary color</a>
+  <a href="" class="btn btn-outline-highlight" role="button">Highlight color</a>
+  <a href="" class="btn btn-outline-standout" role="button">Standout color</a>
+</div>
+""")

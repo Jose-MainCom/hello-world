@@ -1,0 +1,79 @@
+@{
+    ViewData["Title"] = "Top task 1 Content page 1";
+    Layout = "~/Views/Shared/Layouts/_SamplePageLayout.cshtml";
+    ViewData["Landing"] = "Top task1";
+}
+
+@Html.Raw("""
+<nav aria-label="You are here" class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/index.html" title="Home page">Home</a>
+    </li>
+    <li>
+      <a href="/top-task-1/" title="Home page">Top task 1</a>
+    </li>
+    <li>Content page 1</li>
+  </ol>
+</nav>
+
+<div class="row">
+  <div class="col-lg-3 pe-lg-5" role="complementary">
+    <!-- Side navigation -->
+
+    <nav aria-label="list navigation" class="side-navigation">
+      <ul>
+        <li>
+          <a href="/top-task-1/" class="landing">Top task</a>
+        </li>
+        <li>
+          <a href="/top-task-1/content-page-1.html" class="active"
+            >Content page 1</a
+          >
+        </li>
+        <li>
+          <ul>
+            <li>
+              <a href="/top-task-1/content-page-2.html">Content page 2</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/top-task-1/content-page-3.html">Content page 3</a></li>
+        <li><a href="/top-task-1/content-page-4.html">Content page 4</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-lg-9 p-b-lg">
+    <h1 class="m-t-0 p-b-lg">Content page 1</h1>
+
+    <p class="lead">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+      pretium dapibus diam, a finibus metus congue a.
+    </p>
+
+    <h2>Heading</h2>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+      pretium dapibus diam, a finibus metus congue a. Vestibulum laoreet
+      faucibus ultrices. Vestibulum condimentum lectus in arcu ultricies
+      condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Vestibulum pretium dapibus diam, a finibus metus congue a. Vestibulum
+      laoreet faucibus ultrices. Vestibulum condimentum lectus in arcu ultricies
+      condimentum.
+    </p>
+
+    <h2>Heading</h2>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+      pretium dapibus diam, a finibus metus congue a. Vestibulum laoreet
+      faucibus ultrices. Vestibulum condimentum lectus in arcu ultricies
+      condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Vestibulum pretium dapibus diam, a finibus metus congue a. Vestibulum
+      laoreet faucibus ultrices. Vestibulum condimentum lectus in arcu ultricies
+      condimentum.
+    </p>
+  </div>
+</div>
+""")

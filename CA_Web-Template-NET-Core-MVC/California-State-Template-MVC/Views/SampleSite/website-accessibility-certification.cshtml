@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Website certification";
+    Layout = "~/Views/Shared/Layouts/_SampleOneColLayout.cshtml";
+}
+
+@Html.Raw("""
+<h1 class="mt-lg-0">Website certification</h1>
+
+<p class="subtitle">2023 Certification</p>
+
+<p><span class="bold">Agency:</span> Agency or department name</p>
+<p><span class="bold">Certification date:</span> Month day, year</p>
+<p><span class="bold">Website:</span> website.ca.gov</p>
+<p><span class="bold">Contact:</span> link or email address</p>
+
+<p class="m-t-lg">
+  The undersigned certify that, as of <strong>Month day, year</strong> the
+  website of the <strong>Agency Name</strong> is designed, developed, and
+  maintained to be accessible. This denotes compliance with the following:
+</p>
+
+<ul class="m-b-lg">
+  <li>
+    California Government Code Sections
+    <a
+      href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=7405&lawCode=GOV"
+      >7405</a
+    >,
+    <a
+      href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=11135&lawCode=GOV"
+      >11135</a
+    >, and
+    <a
+      href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=11546.7&lawCode=GOV"
+      >11546.7</a
+    >
+  </li>
+  <li>
+    <a href="https://www.w3.org/TR/WCAG21?portal-california"
+      >Web Content Accessibility Guidelines 2.1</a
+    >
+    published by the Web Accessibility Initiative of the World Wide Web
+    Consortium
+  </li>
+  <li>At a minimum Level AA success criteria</li>
+</ul>
+
+<div class="row">
+  <div class="col-lg-6">
+    <strong class="subtitle">CIO Name</strong>
+    <p>
+      Chief Information Officer<br />
+      (Signature on file) June 15, 2023
+    </p>
+  </div>
+  <div class="col-lg-6">
+    <strong class="subtitle">Director's Name</strong>
+    <p>Director</p>
+  </div>
+</div>
+""")

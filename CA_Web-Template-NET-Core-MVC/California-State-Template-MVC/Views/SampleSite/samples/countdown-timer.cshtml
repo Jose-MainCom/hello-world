@@ -1,0 +1,84 @@
+@{
+    ViewData["Title"] = "Countdown Timer";
+    Layout = "~/Views/Shared/Layouts/_SampleSamplesLayout.cshtml";
+    ViewData["Landing"] = "Samples";
+}
+
+@Html.Raw("""
+<!--HTML-->
+<div class="row flex-column flex-md-row countdown p-x">
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+    <span class="countdown-text"
+      ><abbr title="weeks" aria-label="weeks" class="text-decoration-none"
+        >wks</abbr
+      ><br
+    /></span>
+    <span id="weeks1"></span>
+  </div>
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+    <span class="countdown-text">days<br /></span>
+    <span id="days1"></span>
+  </div>
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+    <span class="countdown-text"
+      ><abbr title="hours" aria-label="hours" class="text-decoration-none"
+        >hrs</abbr
+      >
+      <br
+    /></span>
+    <span id="hours1"></span>
+  </div>
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+    <span class="countdown-text"
+      ><abbr title="minutes" aria-label="minutes" class="text-decoration-none"
+        >mins</abbr
+      ><br
+    /></span>
+    <span id="minutes1"></span>
+  </div>
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+    <span class="countdown-text"
+      ><abbr title="seconds" aria-label="seconds" class="text-decoration-none"
+        >secs</abbr
+      ><br
+    /></span>
+    <span id="seconds1"></span>
+  </div>
+</div>
+
+<!--JavaScript-->
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Jan 1, 2026 00:00:00").getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function () {
+
+   // Get todays date and time
+   var now = new Date().getTime();
+
+   // Find the distance between now an the count down date
+   var distance = countDownDate - now;
+
+   // Time calculations for weeks, days, hours, minutes and seconds
+   var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
+   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+   // Output the result in the elements with id="days1", id="hours1" etc.
+   document.getElementById("weeks1").innerHTML = weeks;
+   document.getElementById("days1").innerHTML = days;
+   document.getElementById("hours1").innerHTML = hours;
+   document.getElementById("minutes1").innerHTML = minutes;
+   document.getElementById("seconds1").innerHTML = seconds;
+
+   // If the count down is over, write some text
+   if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("days1").innerHTML = "EXPIRED";
+   }
+  }, 1000);
+</script>
+""")

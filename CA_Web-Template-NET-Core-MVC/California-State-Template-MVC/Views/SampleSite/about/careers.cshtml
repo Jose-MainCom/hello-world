@@ -1,0 +1,152 @@
+@{
+    ViewData["Title"] = "Careers";
+    Layout = "~/Views/Shared/Layouts/_SampleHomeLayout.cshtml";
+    ViewData["Landing"] = "Careers";
+}
+
+@Html.Raw("""
+<div class="section-understated">
+  <div class="container p-y-md">
+    <nav aria-label="You are here" class="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/index.html" title="Home page">Home</a>
+        </li>
+        <li><a href="/about/index.html" title="About page">About</a></li>
+        <li>Careers</li>
+      </ol>
+    </nav>
+    <div class="row">
+      <div class="col-lg-3">
+        <h1 class="m-t-0 color-p2">Careers</h1>
+      </div>
+      <div class="col-lg-9">
+        <img
+          src="/images/careers-landing.jpg"
+          alt="Dep. person #1 photo"
+          class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container p-t-lg">
+  <div class="row">
+    <div class="col-lg-3 pe-lg-5" role="complementary">
+      <!-- Side navigation -->
+
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a href="/about/index.html" class="landing">About us</a>
+          </li>
+          <li>
+            <a href="/about/our-organization.html">Our organization</a>
+          </li>
+          <li><a href="/about/news/index.html">News</a></li>
+          <li><a href="/about/careers.html" class="active">Careers</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-lg-9 m-b-lg">
+      <p class="lead m-b-lg color-p2">
+        An engaging sentence or two on why people should work at your
+        department. Join our team and be a part of shaping a brighter future for
+        all. Explore diverse career paths that allow you to make a meaningful
+        impact in the lives of Californians
+      </p>
+      <!--Cards-->
+      <div class="row">
+        <div class="col-md-6 m-b-md">
+          <div class="card h-100">
+            <div class="card-body bg-gray-50 h-100 d-flex flex-column">
+              <h3 class="h4 m-y-sm">Job openings</h3>
+              <p class="m-b">
+                We're looking for talented people here at Department Name.
+                Include a sentence that aligns with your mission. Explore our
+                jobs and join our team.
+              </p>
+              <p class="mt-auto">
+                <a class="btn btn-primary p-x-md" href="javascript:;">
+                  Browse jobs
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 m-b-md">
+          <div class="card h-100">
+            <div class="card-body bg-gray-50 h-100 d-flex flex-column">
+              <h3 class="h4 m-y-sm">Open exams</h3>
+              <p class="m-b">
+                These exams are open to all people that meet the minimum
+                qualifications. Most positions require you to take an exam.
+                These exams are for positions within our department.
+              </p>
+              <p class="mt-auto">
+                <a class="btn btn-primary p-x-md" href="javascript:;">
+                  Search exams
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End cards-->
+
+      <h2>About our department</h2>
+      <p>
+        Use this space to market why people should work for you. Maybe the
+        department has free parking or is near public transportation. You could
+        also promote diversity and inclusion. There are some examples:
+      </p>
+
+      <ul>
+        <li>
+          <span class="bold">Meaningful impact:</span> Make a difference and
+          improve the lives of Californians
+        </li>
+        <li>
+          <span class="bold">Stability and security:</span> Comprehensive
+          benefits and retirement
+        </li>
+        <li>
+          <span class="bold">Professional growth:</span> Training and job
+          advancement opportunities
+        </li>
+      </ul>
+      <p>
+        We are committed to improving the lives of Californians through the
+        provision of these essential services.
+      </p>
+
+      <h2>Where we work</h2>
+      <p>
+        Include information about the location of your office(s). You can also
+        include information about remote work opportunities.
+      </p>
+      <p>
+        Our main office is at
+        <span class="bold">123 Street Name in Sacramento.</span> Amenities
+        include:
+      </p>
+      <ul>
+        <li>Free parking and close to public transportation</li>
+        <li>Centrally located near many restaurants and shops</li>
+        <li>Fitness center and classes available</li>
+      </ul>
+      <h2>More resources</h2>
+      <p>
+        Use this space to promote other links within your website or to link out
+        to a resource. Consider linking to content that describes the
+        application process, salary information, etc.
+      </p>
+      <ul>
+        <li><a href="javascript:;">Link 1</a></li>
+        <li><a href="javascript:;">Link 2</a></li>
+        <li><a href="javascript:;">Link 3</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+""")

@@ -1,0 +1,105 @@
+@{
+    ViewData["Title"] = "Blank";
+    Layout = null;
+}
+
+@Html.Raw("""
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blank</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!-- BEGIN STATE_TEMPLATE -->
+
+<!-- Public Sans Font
+Load the recommended Public Sans Font.  Removing this section will use System-UI font stack instead.
+
+More info on Typography here...
+https://template.webstandards.ca.gov/visual-design/typography.html
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=block"
+  rel="stylesheet" />
+<!-- End Public Sans Font -->
+
+<!-- STATE_TEMPLATE *** HEAD references ***
+    
+Include links to stylesheet and custom theme and core JS.
+    
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/cagov.core.min.css"/>
+<link rel="stylesheet" href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/colortheme-oceanside.min.css"/>
+<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/js/cagov.core.min.js"></script>
+
+You may also use the CDN instead of using the local folder...
+
+<link rel="stylesheet" href="{{ general.CdnPath }}css/cagov.core.min.css" crossorigin="anonymous"/>
+<link rel="stylesheet" href="{{ general.CdnPath }}css/colortheme-oceanside.min.css" crossorigin="anonymous"/>
+<script src="{{ general.CdnPath }}js/cagov.core.min.js" crossorigin="anonymous"></script>
+
+More info on CDN here...
+https://template.webstandards.ca.gov/cdn.html
+
+-->
+<link
+  rel="stylesheet"
+  href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/cagov.core.min.css" />
+<!-- Replace with different color theme if needed (oceanside is default)
+<link
+  rel="stylesheet"
+  href="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/css/colortheme-delta.min.css" /> -->
+<script src="https://cdn.cdt.ca.gov/cdt/statetemplate/6.5.5/js/cagov.core.min.js"></script>
+<!-- END STATE_TEMPLATE -->
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="100x100"
+  href="/images/apple-touch-icon-precomposed.png" />
+<link rel="icon" sizes="192x192" href="/images/apple-touch-icon-192x192.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="180x180"
+  href="/images/apple-touch-icon-180x180.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="152x152"
+  href="/images/apple-touch-icon-152x152.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/images/apple-touch-icon-144x144.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="120x120"
+  href="/images/apple-touch-icon-120x120.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="114x114"
+  href="/images/apple-touch-icon-114x114.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="72x72"
+  href="/images/apple-touch-icon-72x72.png" />
+<link
+  rel="apple-touch-icon-precomposed"
+  href="/images/apple-touch-icon-57x57.png" />
+<link rel="shortcut icon" href="/images/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<!-- Statewide Alerts Server -->
+<script defer src="https://alert.cdt.ca.gov" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <h1>Blank page</h1>
+    <p>
+      All the template code is properly referenced, but no elements have been
+      added here.
+    </p>
+  </body>
+</html>
+""")

@@ -1,0 +1,23 @@
+@{
+    var path = Context.Request.Path.Value ?? string.Empty;
+    var isSerp = string.Equals(path, "/serp", StringComparison.OrdinalIgnoreCase)
+        || string.Equals(path, "/serp.html", StringComparison.OrdinalIgnoreCase);
+}
+@if (!isSerp)
+{
+<div class="container">
+  <form id="Search" class="pos-rel" action="/serp.html">
+    <span class="sr-only" id="SearchInput">Custom Google Search</span>
+    <input
+      type="search"
+      name="q"
+      aria-labelledby="SearchInput"
+      placeholder="Search"
+      class="search-textfield" />
+    <button type="submit" class="gsc-search-button">
+      <span class="ca-gov-icon-search" aria-hidden="true"></span>
+      <span class="sr-only">Submit</span>
+    </button>
+  </form>
+</div>
+}

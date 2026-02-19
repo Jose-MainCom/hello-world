@@ -1,0 +1,180 @@
+@{
+    ViewData["Title"] = "Components and patterns";
+    Layout = "~/Views/Shared/Layouts/_SampleHomeLayout.cshtml";
+    ViewData["Landing"] = "Components";
+}
+
+@Html.Raw("""
+<div class="bg-gray-lightest">
+  <div class="container p-y-md">
+    <nav aria-label="You are here" class="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/index.html" title="Home page">Home</a>
+        </li>
+        <li>Components and patterns</li>
+      </ol>
+    </nav>
+    <h1 class="m-t-0">Components and patterns</h1>
+  </div>
+</div>
+
+<div class="container p-t-lg">
+  <div class="row">
+    <div class="col-lg-3 pe-lg-5" role="complementary">
+      <!-- Side navigation -->
+
+      <nav aria-label="list navigation" class="side-navigation">
+        <ul>
+          <li>
+            <a href="/top-task-1/" class="landing active">Top task</a>
+          </li>
+          <li>
+            <a href="/top-task-1/content-page-1.html">Content page 1</a>
+          </li>
+          <li>
+            <ul>
+              <li>
+                <a href="/top-task-1/content-page-2.html">Content page 2</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/top-task-1/content-page-3.html">Content page 3</a></li>
+          <li><a href="/top-task-1/content-page-4.html">Content page 4</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-lg-9 p-b-lg">
+      <p class="lead">
+        This website contains most of the state template components and
+        patterns. Here’s a directory of all items, with links to pages that
+        contain that item. This allows designers, developers, and stakeholders
+        review the item within context.
+      </p>
+
+      <div class="row p-y-md">
+        <div class="col-lg-6">
+          <h3 class="m-t-0">Content</h3>
+        </div>
+        <div class="col-lg-6">
+          <ul>
+            <li><a href="/samples/alert.html">Alert</a></li>
+            <li><a href="/samples/banner.html">Banner</a></li>
+            <li><a href="/samples/blockquote.html">Blockquote</a></li>
+            <li>
+              <a href="/samples/executive-profile.html">Executive profile</a>
+            </li>
+            <li><a href="/samples/list-unordered.html">Lists</a></li>
+            <li><a href="/samples/modal.html">Modal</a></li>
+            <li><a href="/samples/table.html">Table</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="m-t-0">Layout and organization</h3>
+        </div>
+        <div class="col-lg-6">
+          <ul>
+            <li><a href="/samples/accordion.html">Accordion</a></li>
+            <li><a href="/samples/card-grid-basic.html">Card grid</a></li>
+            <li>
+              <a href="/samples/horizontal-separator.html"
+                >Horizontal separator</a
+              >
+            </li>
+            <li><a href="/samples/tabs.html">Tabs</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="m-t-0">Navigation</h3>
+        </div>
+        <div class="col-lg-6">
+          <ul>
+            <li><a href="/samples/breadcrumb.html">Breadcrumb</a></li>
+            <li><a href="/samples/page-navigation.html">Page navigation</a></li>
+            <li><a href="/samples/pagination.html">Pagination</a></li>
+            <li><a href="/samples/side-navigation.html">Side navigation</a></li>
+            <li>
+              <a href="/samples/navigation-with-icons.html"
+                >Navigation with icons</a
+              >
+            </li>
+            <li><a href="/samples/featured-search.html">Featured search</a></li>
+            <li><a href="/cagov-header.html">ca.gov header</a></li>
+            <li><a href="/cagov-utility.html">ca.gov utility header</a></li>
+            <li><a href="/cagov-header-full.html">ca.gov full header</a></li>
+            <li><a href="/cagov-footer.html">ca.gov footer</a></li>
+            <li><a href="/template-header-full.html">Template header</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="m-t-0">Page patterns</h3>
+        </div>
+        <div class="col-lg-6">
+          <ul>
+            <li><a href="/about/news/index.html">Newsroom</a></li>
+            <li><a href="/about/news/articles.html">List of articles</a></li>
+            <li><a href="/about/news/article-title1.html">Article</a></li>
+            <li><a href="/index.html">Homepage</a></li>
+            <li><a href="/sitemap.html">Sitemap</a></li>
+            <li><a href="/404.html">404</a></li>
+            <li><a href="/about/index.html">About us landing page</a></li>
+            <li><a href="/about/careers.html">Careers</a></li>
+            <li>
+              <a href="/top-task-1/index.html">Landing page (+ variations)</a>
+            </li>
+            <li><a href="/content-directory.html">Content directory</a></li>
+            <li><a href="/contact.html">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="m-t-0">Selection and input</h3>
+        </div>
+        <div class="col-lg-6">
+          <ul>
+            <li><a href="/samples/buttons.html">Button</a></li>
+            <li><a href="/samples/card-default.html">Card</a></li>
+            <li><a href="/samples/form-textfield.html">Form elements</a></li>
+            <li>
+              <a href="/samples/social-media-icons.html">Social media icons</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="m-t-0">Status</h3>
+        </div>
+        <div class="col-lg-6">
+          <ul>
+            <li><a href="/samples/countdown-timer.html">Countdown timer</a></li>
+            <li><a href="/samples/number-counter.html">Number counter</a></li>
+            <li><a href="/samples/progress-bar.html">Progress bar</a></li>
+            <li>
+              <a href="/samples/progress-block-bold.html">Progress tracker</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </div>
+</div>
+""")

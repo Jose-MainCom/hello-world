@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Form Textfield Required";
+    Layout = "~/Views/Shared/Layouts/_SampleSamplesLayout.cshtml";
+    ViewData["Landing"] = "Samples";
+}
+
+@Html.Raw("""
+<label class="form-control-label" for="InputNameRequired">
+  <span class="required-label">*</span>
+  <span class="sr-only">Required field:</span>
+  Full name
+</label>
+<input
+  type="text"
+  class="form-control"
+  id="InputNameRequired"
+  placeholder="Full name" />
+<div class="invalid-feedback d-block">This field is required</div>
+""")

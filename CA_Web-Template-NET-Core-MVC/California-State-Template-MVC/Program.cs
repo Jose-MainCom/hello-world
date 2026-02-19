@@ -20,7 +20,10 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    name: "sample-html-pages",
+    pattern: "{**path:regex(.*\\.html)}",
+    defaults: new { controller = "Home", action = "Page" });
+
+app.MapDefaultControllerRoute();
 
 app.Run();
