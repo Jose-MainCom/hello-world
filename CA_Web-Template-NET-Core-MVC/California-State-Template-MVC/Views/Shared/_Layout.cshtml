@@ -95,7 +95,7 @@
         <div class="section-default">
             <div class="branding">
                 <div class="header-organization-banner">
-                    <a href="">
+                    <a href="/">
                         <div class="logo-assets">
                             <img
                                 src="/images/sample-logo.png"
@@ -104,7 +104,7 @@
                                 style="aspect-ratio: 80 / 70" />
                             <div class="logo-text">
                                 <span class="logo-state">State of California</span>
-                                <span class="logo-dept">Site name</span>
+                                <span class="logo-dept">MVC Demo</span>
                             </div>
                         </div>
                     </a>
@@ -135,38 +135,13 @@
         </div>
 
 
-        <!--  Site navigation and search components -->
+        <!--  Site navigation component -->
         <div class="navigation-search full-width-nav container">
-            <!--  Google search  -->
-            <div id="head-search" class="search-container featured-search">
-                <div class="container">
-                    <form id="Search" class="pos-rel" action="@Url.Action("serp")">
-                        <span class="sr-only" id="SearchInput">Custom Google Search</span>
-                        <input type="search" name="q" aria-labelledby="SearchInput" placeholder="Search" class="search-textfield" />
-                        <button type="submit" class="gsc-search-button">
-                            <span class="ca-gov-icon-search" aria-hidden="true"></span><span class="sr-only">Submit</span>
-                        </button>
-                        <div class="close-search-btn">
-                            <button class="close-search gsc-clear-button border-0 bg-transparent pos-rel"
-                                    type="reset">
-                                <span class="sr-only">Close</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
             <!-- Site navigation structural component -->
             <nav id="navigation" class="main-navigation dropdown">
                 <ul id="nav_list" class="top-level-nav">
                     <li class="nav-item">
                         <a class="first-level-link active" href="@Url.Action("index")">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="first-level-link" href="@Url.Action("about")">About State Web Template</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="first-level-link" href="@Url.Action("contact")">Contact us</a>
                     </li>
                 </ul>
             </nav>

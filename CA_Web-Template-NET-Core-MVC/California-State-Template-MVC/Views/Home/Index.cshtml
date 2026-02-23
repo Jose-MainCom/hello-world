@@ -1,224 +1,67 @@
-﻿@{
-    ViewData["Title"] = "California State Web Template";
-    Layout = "~/Views/Shared/Layouts/_SampleHomeLayout.cshtml";
-    ViewData["Landing"] = "Home";
+@model HomeIndexViewModel
+@{
+    ViewData["Title"] = "State of California MVC Demo";
 }
 
-@Html.Raw("""
-<div class="container p-a-md">
+@section Head {
+  <style>
+    .component-section {
+      scroll-margin-top: 12rem;
+    }
+  </style>
+}
+
+<div id="page-top" class="container p-y-lg">
+  <h1 class="m-t-0">California State Web Template MVC Demo</h1>
+  <p>
+    This sample site uses one MVC controller and one page to preview five key components.
+    Each component is driven by a dedicated view model and reusable partial.
+  </p>
+
+  <h2 id="components" class="component-section">Component sections</h2>
   <div class="row">
-    <div class="bg-gray-lightest col-md-6 col-lg-4 p-a-md order-2 order-md-1">
-      <h1 class="h2 m-t">Homepage title</h1>
-      <p>
-        Compelling sentence or two that ties the website to the department
-        missions or goals
-      </p>
-      <p>
-        Vestibulum laoreet faucibus ultrices, vestibulum condimentum lectus in
-        arcu.
-      </p>
-      <a href="javascript:;" class="btn btn-primary m-t-md m-b-lg">Button</a>
+@foreach (var link in Model.ComponentLinks)
+{
+    <div class="col-md-6 col-lg-4 m-b-md">
+      <a href="@link.Url" class="link-grid" style="height: auto;">@link.Title</a>
+      <p class="m-t-sm">@link.Description</p>
     </div>
-    <div
-      class="col-lg-8 col-md-6 p-0 text-right order-1 order-md-2 d-flex justify-content-center">
-      <a
-        href="#"
-        class="feature-img bg-gray-light"
-        style="background: url('images/main-banner.jpg')"
-        aria-label="Feature card example image">
-      </a>
-    </div>
+}
   </div>
 
-  <h2>Top user tasks</h2>
-  <div class="row">
-    <div class="col-md-4 mb-4">
-      <a href="/components-patterns" class="link-grid"
-        >Components directory</a
-      >
-    </div>
-    <div class="col-md-4 mb-4">
-      <a href="/top-task-1/content-page-1" class="link-grid"
-        >Top task 1 content 1</a
-      >
-    </div>
-    <div class="col-md-4 mb-4">
-      <a href="/top-task-2/content-page-1" class="link-grid"
-        >Top task 2 content 1</a
-      >
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 mb-4">
-      <a href="https://template.webstandards.ca.gov/" class="link-grid"
-        >State Template Website</a
-      >
-    </div>
-    <div class="col-md-4 mb-4">
-      <a href="javascript:;" class="link-grid">Link</a>
-    </div>
-    <div class="col-md-4 mb-4">
-      <a href="javascript:;" class="link-grid">Link</a>
-    </div>
-  </div>
+  <hr class="m-y-lg" />
 
-  <div class="row m-y-lg">
-    <div class="col-md-6 m-b-md">
-      <!-- Article -->
-      <article
-        class="bg-gray-50 bg-gray-100-hover brd-solid-1 brd-gray-200 pos-rel rounded-4">
-        <div class="p-a">
-          <h3 class="h4 m-t-0 m-b-sm">
-            <a
-              class="u-link-v5 color-gray-dark color-primary-hover link-before no-underline"
-              href="javascript:;">
-              Marketing 1
-            </a>
-          </h3>
-          <p>
-            Use marketing spaces to promote items related to business goals.
-            Limit to 2 or 3 and rotate as needed. This allows the homepage to
-            remain simple and focused.
-          </p>
-        </div>
-      </article>
-      <!-- End Article -->
-    </div>
+  <section id="alert-preview" class="component-section">
+    <h2>Alert preview</h2>
+    <partial name="~/Views/Shared/Components/_Alert.cshtml" model="Model.Alert" />
+  </section>
 
-    <div class="col-md-6 m-b-md">
-      <!-- Article -->
-      <article
-        class="bg-gray-50 bg-gray-100-hover brd-solid-1 brd-gray-200 pos-rel rounded-4">
-        <div class="p-a">
-          <h3 class="h4 m-t-0 m-b-sm">
-            <a
-              class="u-link-v5 color-gray-dark color-primary-hover link-before no-underline"
-              href="javascript:;">
-              Marketing 2
-            </a>
-          </h3>
-          <p>
-            Enter a concise description for this topic. You could include
-            imagery with the marketing cards to make it more visually appealing.
-          </p>
-        </div>
-      </article>
-      <!-- End Article -->
-    </div>
-  </div>
+  <section id="accordion-preview" class="component-section">
+    <h2>Accordion preview</h2>
+    <partial name="~/Views/Shared/Components/_Accordion.cshtml" model="Model.Accordion" />
+  </section>
 
-  <div class="row">
-    <div class="col-lg-7">
-      <div class="card brd-solid-1 brd-gray-light rounded-4 h-100">
-        <div class="card-body">
-          <h2 class="m-t-0">News</h2>
+  <section id="card-grid-preview" class="component-section">
+    <h2>Card Grid preview</h2>
+    <partial name="~/Views/Shared/Components/_CardGrid.cshtml" model="Model.CardGrid" />
+  </section>
 
-          <hr class="m-y-md" />
-          <h3 class="lead font-weight-700">
-            <a
-              href="/about/news/press-release-title1"
-              aria-disabled="true">
-              Press release 1
-            </a>
-          </h3>
-          <p>Month 00, 0000 | News</p>
-          <hr class="m-y-md" />
-          <h3 class="lead font-weight-700">
-            <a
-              href="/about/news/press-release-title2"
-              aria-disabled="true">
-              Press release 2
-            </a>
-          </h3>
-          <p>Month 00, 0000 | News</p>
-          <hr class="m-y-md" />
-          <h3 class="lead font-weight-700">
-            <a href="/about/news/article-title1" aria-disabled="true">
-              News article 1
-            </a>
-          </h3>
-          <p>Month 00, 0000 | News</p>
-          <div class="m-t-md">
-            <a href="/about/news">View all</a>
-          </div>
-        </div>
+  <section id="breadcrumb-preview" class="component-section">
+    <h2>Breadcrumb preview</h2>
+    <partial name="~/Views/Shared/Components/_Breadcrumb.cshtml" model="Model.Breadcrumb" />
+  </section>
+
+  <section id="side-navigation-preview" class="component-section">
+    <h2>Side Navigation preview</h2>
+    <div class="row">
+      <div class="col-lg-4">
+        <partial name="~/Views/Shared/Components/_SideNavigation.cshtml" model="Model.SideNavigation" />
       </div>
-    </div>
-    <div class="col-lg-5">
-      <div class="card brd-solid-1 brd-gray-light rounded-4 p-a-md h-100">
-        <h2 class="m-t-0">Heading</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-          pretium dapibus diam, a finibus metus congue a. Vestibulum laoreet
-          faucibus ultrices. Vestibulum condimentum lectus in arcu ultricies
-          condimentum.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-          pretium dapibus diam, a finibus metus congue a. Vestibulum laoreet
-          faucibus ultrices. Vestibulum condimentum lectus in arcu ultricies
-          condimentum.
+      <div class="col-lg-8">
+        <p class="m-t-lg m-t-lg-0">
+          This side navigation and the Card Grid/Breadcrumb links jump to sections on this page.
         </p>
       </div>
     </div>
-  </div>
+  </section>
 </div>
-
-<hr />
-
-<div class="container m-y-md">
-  <div class="row">
-    <div class="col-md-4 d-flex">
-      <!--Executive profile figure-->
-      <figure class="executive-profile bg-transparent">
-        <img src="/images/sample-logo.png" alt="Image Description" />
-        <div class="executive-profile-body">
-          <p>Official Title</p>
-          <h3 class="executive-name">Name</h3>
-          <p>Government agency</p>
-          <p>
-            <a href="javascript:;" aria-label="Link to Official's Website">
-              Bio or contact info
-            </a>
-          </p>
-        </div>
-      </figure>
-      <!-- End Figure -->
-    </div>
-    <div class="col-md-4 d-flex">
-      <!--Executive profile figure-->
-      <figure class="executive-profile bg-transparent">
-        <img src="/images/sample-logo.png" alt="Image Description" />
-        <div class="executive-profile-body">
-          <p>Official Title</p>
-          <h3 class="executive-name">Name</h3>
-          <p>Government agency</p>
-          <p>
-            <a href="javascript:;" aria-label="Link to Official's Website">
-              Bio or contact info
-            </a>
-          </p>
-        </div>
-      </figure>
-      <!-- End Figure -->
-    </div>
-    <div class="col-md-4 d-flex">
-      <!--Executive profile figure-->
-      <figure class="executive-profile bg-transparent">
-        <img src="/images/sample-logo.png" alt="Image Description" />
-        <div class="executive-profile-body">
-          <p>Official Title</p>
-          <h3 class="executive-name">Name</h3>
-          <p>Government agency</p>
-          <p>
-            <a href="javascript:;" aria-label="Link to Official's Website">
-              Bio or contact info
-            </a>
-          </p>
-        </div>
-      </figure>
-      <!-- End Figure -->
-    </div>
-  </div>
-</div>
-""")
