@@ -14,8 +14,12 @@ This repository contains the source code for the California State Web Template i
 3. Restore and build in the IDE or use commands:
    - `dotnet restore`
    - `dotnet build California-State-Template-MVC.sln`
-4. Run the web app through the IDE or use commands:
+4. Install libman and restore the state template resources:
+  - 'dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+  - 'cd .\California-State-Template-MVC\'
+  - 'libman restore'
+5. Run the web app through the IDE or use commands:
    - `dotnet run --project California-State-Template-MVC/California-State-Template-MVC.csproj`
-5. Explore the template and customize it as you wish.
+6. Explore the template and customize it as you wish.
 
 For more information on how to use and modify the template, please visit https://webstandards.ca.gov/ for more resources and guidance on the California State Web Template.
