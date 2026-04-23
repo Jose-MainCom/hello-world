@@ -1,0 +1,7 @@
+@model SideNavComponentViewModel
+
+<nav aria-label="@Model.AriaLabel" class="side-navigation">
+  <ul>
+    <partial name="~/Views/Shared/Components/_SideNavigationItems.cshtml" model="Model.Items" />
+  </ul>
+</nav>

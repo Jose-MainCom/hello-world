@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Launch MVC App",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-mvc",
+            "program": "${workspaceFolder}/California-State-Template-MVC/bin/Debug/net10.0/California-State-Template-MVC.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/California-State-Template-MVC",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "https://localhost:7145",
+            "webRoot": "${workspaceFolder}"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch MVC + Chrome",
+            "configurations": [
+                ".NET Launch MVC App",
+                "Launch Chrome against localhost"
+            ]
+        }
+    ]
+}

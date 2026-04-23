@@ -1,0 +1,40 @@
+@model AlertComponentViewModel
+@{
+    var alertClasses = Model.Dismissible ? "alert alert-dismissible alert-banner" : "alert alert-banner";
+}
+<div class="@alertClasses" role="alert">
+  <div class="container">
+@if (!string.IsNullOrWhiteSpace(Model.IconImageUrl))
+{
+    <img src="@Model.IconImageUrl" alt="@Model.IconImageAlt" />
+}
+else if (!string.IsNullOrWhiteSpace(Model.IconClass))
+{
+    <span class="alert-icon @Model.IconClass" aria-hidden="true"></span>
+}
+    <span class="alert-text">
+      <span class="text-bold">@Model.EmphasisText</span> @Model.Message
+@if (!string.IsNullOrWhiteSpace(Model.LinkText) && !string.IsNullOrWhiteSpace(Model.LinkUrl))
+{
+      <span class="ca-gov-icon-pipe" aria-hidden="true"></span>
+      <a href="@Model.LinkUrl">
+        @Model.LinkText
+@if (!string.IsNullOrWhiteSpace(Model.LinkSrOnlyText))
+{
+        <span class="sr-only"> @Model.LinkSrOnlyText</span>
+}
+      </a>
+}
+    </span>
+@if (Model.Dismissible)
+{
+    <button
+      type="button"
+      class="close ms-lg-auto"
+      data-bs-dismiss="alert"
+      aria-label="Close">
+      <span class="ca-gov-icon-close-mark" aria-hidden="true"></span>
+    </button>
+}
+  </div>
+</div>

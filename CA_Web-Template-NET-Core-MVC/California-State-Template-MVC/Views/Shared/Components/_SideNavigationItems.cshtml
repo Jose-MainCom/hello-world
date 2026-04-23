@@ -1,0 +1,36 @@
+@model IReadOnlyList<SideNavItemComponentViewModel>
+
+@foreach (var item in Model)
+{
+    var classes = new List<string>();
+    if (item.IsLanding)
+    {
+        classes.Add("landing");
+    }
+    if (item.IsBack)
+    {
+        classes.Add("back");
+    }
+    if (item.IsActive)
+    {
+        classes.Add("active");
+    }
+    var classAttr = string.Join(" ", classes);
+
+    <li>
+@if (!string.IsNullOrWhiteSpace(item.Url))
+{
+    <a href="@item.Url" class="@classAttr">@item.Text</a>
+}
+else
+{
+    <a class="@classAttr">@item.Text</a>
+}
+@if (item.Children.Count > 0)
+{
+      <ul>
+        <partial name="~/Views/Shared/Components/_SideNavigationItems.cshtml" model="item.Children" />
+      </ul>
+}
+    </li>
+}

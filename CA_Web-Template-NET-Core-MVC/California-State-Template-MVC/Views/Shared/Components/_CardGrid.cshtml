@@ -1,0 +1,27 @@
+@model CardGridComponentViewModel
+
+<div class="row">
+@foreach (var card in Model.Cards)
+{
+    <div class="col-md-4 m-b-md">
+      <div class="card h-100">
+        <div class="card-body bg-gray-50 h-100 d-flex flex-column">
+          <h3 class="h4 m-y-sm">@card.Title</h3>
+          <p class="m-b">@card.Body</p>
+@if (!string.IsNullOrWhiteSpace(card.ButtonText) && !string.IsNullOrWhiteSpace(card.ButtonUrl))
+{
+          <p class="mt-auto">
+            <a class="btn btn-primary p-x-md" href="@card.ButtonUrl">
+              @card.ButtonText
+@if (!string.IsNullOrWhiteSpace(card.ButtonSrOnlyText))
+{
+              <span class="sr-only"> @card.ButtonSrOnlyText</span>
+}
+            </a>
+          </p>
+}
+        </div>
+      </div>
+    </div>
+}
+</div>
