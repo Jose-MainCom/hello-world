@@ -1,0 +1,67 @@
+@model HomeIndexViewModel
+@{
+    ViewData["Title"] = "State of California MVC Demo";
+}
+
+@section Head {
+  <style>
+    .component-section {
+      scroll-margin-top: 12rem;
+    }
+  </style>
+}
+
+<div id="page-top" class="container p-y-lg">
+  <h1 class="m-t-0">California State Web Template MVC Demo</h1>
+  <p>
+    This sample site uses one MVC controller and one page to preview five key components.
+    Each component is driven by a dedicated view model and reusable partial.
+  </p>
+
+  <h2 id="components" class="component-section">Component sections</h2>
+  <div class="row">
+@foreach (var link in Model.ComponentLinks)
+{
+    <div class="col-md-6 col-lg-4 m-b-md">
+      <a href="@link.Url" class="link-grid" style="height: auto;">@link.Title</a>
+      <p class="m-t-sm">@link.Description</p>
+    </div>
+}
+  </div>
+
+  <hr class="m-y-lg" />
+
+  <section id="alert-preview" class="component-section">
+    <h2>Alert preview</h2>
+    <partial name="~/Views/Shared/Components/_Alert.cshtml" model="Model.Alert" />
+  </section>
+
+  <section id="accordion-preview" class="component-section">
+    <h2>Accordion preview</h2>
+    <partial name="~/Views/Shared/Components/_Accordion.cshtml" model="Model.Accordion" />
+  </section>
+
+  <section id="card-grid-preview" class="component-section">
+    <h2>Card Grid preview</h2>
+    <partial name="~/Views/Shared/Components/_CardGrid.cshtml" model="Model.CardGrid" />
+  </section>
+
+  <section id="breadcrumb-preview" class="component-section">
+    <h2>Breadcrumb preview</h2>
+    <partial name="~/Views/Shared/Components/_Breadcrumb.cshtml" model="Model.Breadcrumb" />
+  </section>
+
+  <section id="side-navigation-preview" class="component-section">
+    <h2>Side Navigation preview</h2>
+    <div class="row">
+      <div class="col-lg-4">
+        <partial name="~/Views/Shared/Components/_SideNavigation.cshtml" model="Model.SideNavigation" />
+      </div>
+      <div class="col-lg-8">
+        <p class="m-t-lg m-t-lg-0">
+          This side navigation and the Card Grid/Breadcrumb links jump to sections on this page.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>

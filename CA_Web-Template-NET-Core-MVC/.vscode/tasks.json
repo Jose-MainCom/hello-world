@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-mvc",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/California-State-Template-MVC/California-State-Template-MVC.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
