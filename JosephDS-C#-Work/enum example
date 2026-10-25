@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+enum MonthNames
+{
+    January = 1,
+    February,
+    March,
+    April
+}
+
+namespace Practice19
+{
+    class Test
+    {
+        static void Main()
+        {
+            MonthNames month;
+
+            month = MonthNames.March;
+
+            if (month == MonthNames.January)
+            {
+                Console.WriteLine("It's still Winter");
+
+            }
+            else if (month == MonthNames.February)
+            {
+                Console.WriteLine("It's still Winter");
+            }
+            else if (month == MonthNames.March) 
+            {
+                Console.WriteLine("It's Spring");
+            }
+
+            Console.WriteLine("Month is {0} and its integer value is {1}", month, (int)month);
+
+            Console.ReadLine();
+        }
+    }
+}

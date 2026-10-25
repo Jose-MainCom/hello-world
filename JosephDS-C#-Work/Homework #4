@@ -1,0 +1,19 @@
+using System;
+public class Homework4
+{
+    public static void Main(string[]agrs)
+    {
+        int i, factorial = 1, input;
+        
+        Console.Write("Enter a number: ");
+        input = int.Parse(Console.ReadLine());
+
+        for (i = 1; i <= input; i++)
+        {
+            factorial = factorial * i;
+        }
+        Console.Write("The factorial of {0} is {1}", input, factorial);
+        
+        Console.ReadLine();
+    }
+}

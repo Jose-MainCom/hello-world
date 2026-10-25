@@ -1,0 +1,25 @@
+using System;
+
+    class Homework3
+    {
+    static void Main()
+    
+        {
+        while (true)
+        {
+
+            Console.Write("Enter a number to convert to days, hours, minutes, and seconds. ");
+
+            uint TotalSec = uint.Parse(Console.ReadLine());
+
+            uint Sec = ((TotalSec % 86400) % 3600) % 60;
+            uint SecPerMin = ((TotalSec % 86400) % 3600) / 60;
+            uint SecPerHour = (TotalSec % 86400) / 3600;
+            uint SecPerDay = TotalSec / 86400;
+
+            Console.WriteLine("Result is {0} days, {1} hours, {2} minutes, and {3} seconds", SecPerDay, SecPerHour, SecPerMin, Sec);
+            Console.ReadLine();
+        }
+        }
+    
+    }

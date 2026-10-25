@@ -1,0 +1,39 @@
+using System;
+
+struct Contact
+{
+    public int ContactId;
+    public String Name;
+    public String PhoneNumber;
+
+    public Contact(string name, string phoneNumber)  //each time contructor gets called, it will update the newcontact id.
+    {
+        Name = name;
+        PhoneNumber = phoneNumber;
+        ContactId = nextContactId++;
+    }
+
+    // TODO: Create static nextContactId: It is private because we want the constructor call to update it
+    //not the user.
+    private static int nextContactId = 100; 
+}
+
+class Program
+{
+    static void Main()
+    {
+        var contact1 = new Contact("mike", "111-222-3333");
+
+        Console.WriteLine("ContactId = {0} should be 100", contact1.ContactId);
+
+        var contact2 = new Contact("steve", "222-333-4444");
+
+        Console.WriteLine("ContactId = {0} should be 101", contact2.ContactId);
+
+        var contact3 = new Contact("lisa", "222-333-4444");
+
+        Console.WriteLine("ContactId = {0} should be 102", contact3.ContactId);
+
+        Console.ReadLine();
+    }
+}

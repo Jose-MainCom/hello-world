@@ -1,0 +1,89 @@
+using System;
+
+abstract class DrawingObject
+{
+    public DrawingObject(string name)
+    {
+        // this.name is used to avoid collisions
+        // with the parameter name
+        this.name = name;
+    }
+
+    // Cannot have any implementation
+    public abstract void Draw();
+
+    // read-only property
+    public abstract int X
+    {
+        get;
+    }
+
+    // read-write
+    public abstract int Y
+    {
+        get;
+        set;
+    }
+
+    protected string name;
+    protected int x = 0;
+    protected int y = 0;
+}
+
+class Sphere : DrawingObject
+{
+    private float radius;
+
+    public Sphere(string name, float radius) : base(name)
+    {
+        this.radius = radius;
+    }
+
+    public override int X
+    {
+        get
+        {
+            return x;
+        }
+    }
+
+    public override int Y
+    {
+        get
+        {
+            return y;
+        }
+        set
+        {
+            y = value;
+        }
+    }
+
+    public override void Draw()
+    {
+        Console.WriteLine("Sphere.Draw");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        var ciSmallBall = new Sphere("mini", 1.0f);
+        var ciBeachBall = new Sphere("plastic", 24.0f);
+        var ciPlanetoid = new Sphere("moon", 24000.0f);
+
+        var shapes = new DrawingObject[]
+           {
+            ciSmallBall, ciBeachBall, ciPlanetoid
+           };
+
+        foreach (var obj in shapes)
+        {
+            obj.Draw();
+            Console.WriteLine("Drawn at {0},{1}", obj.X, obj.Y);
+        }
+
+        Console.ReadLine();
+    }
+}

@@ -1,0 +1,25 @@
+using System;
+
+class Ascii
+{
+    static void Main()
+    {
+        Console.Write("Enter a character:");
+
+        // Let the user enter a string and press enter.
+        // code here = Console.ReadLine();
+        string toConvert = Console.ReadLine();
+
+        // Grab the first character of the string (str[0])
+        // code here = str[0];
+        char charOne = toConvert[0];
+
+        // Convert the character to an integer to get the ascii value
+        // code here = (int)ch;
+        int theAscii = (int)charOne;
+
+
+        Console.WriteLine("The Ascii value of the first character of the string was {0}", theAscii); // code here);  // show the ascii value
+        Console.ReadLine();
+    }
+}

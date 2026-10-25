@@ -1,0 +1,37 @@
+using System;
+
+class Homework3
+{
+    static void Main()
+    {
+        {
+            while (true)
+            {
+                int SecPerDay = 86400; // Seconds per day
+                int SecPerHour = 3600; // Seconds per hour
+                int SecPerMin = 60;  // Seconds per minute
+
+                int input;
+
+                Console.Write("Enter the total number of seconds:");
+
+                input = int.Parse(Console.ReadLine());
+
+                int days = input / (SecPerDay);
+
+                input = input % (SecPerDay);
+                int hours = input / (SecPerHour);
+
+                input %= (SecPerHour);
+                int minutes = input / (SecPerMin);
+
+                input %= (SecPerMin);
+                int seconds = input;
+
+                Console.Write("{0} days, {1} hours, {2} minutes, and {3} seconds", hours, days, minutes, seconds);
+                Console.ReadLine();
+            }
+        }
+        
+    }
+}

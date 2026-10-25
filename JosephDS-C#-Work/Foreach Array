@@ -1,0 +1,19 @@
+// File: foreach.cs
+using System;
+
+class TestForeach
+{
+    static void Main()
+    {
+        int[] numbers = new int[] { 2, 4, 6, 8, 10, 15, 20, 30, 100 };
+        int sum = 0;
+
+        foreach (int x in numbers)
+        {
+            sum = sum + x;
+        }
+
+        Console.WriteLine("sum is {0}", sum);
+        Console.ReadLine();
+    }
+}

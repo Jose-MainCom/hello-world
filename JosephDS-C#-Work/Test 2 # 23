@@ -1,0 +1,33 @@
+using System;
+class Factorial
+{
+    public static void Main()
+    {
+        long nFactorial = 1;
+        long nComputeTo = 5;
+
+        long nCurDigit = 1;
+
+        try
+        {
+            long x = 1 / (1 - nFactorial);
+
+            checked
+            {
+                for (; nCurDigit <= nComputeTo; nCurDigit++)
+                {
+                    nFactorial *= nCurDigit;
+                }
+            }
+        }
+        catch (OverflowException e)
+        {
+            Console.WriteLine("Computing  {0}! caused an overflow {1}",
+                nComputeTo, e.StackTrace);
+            return;
+        }
+        Console.WriteLine("{0}! is {1}", nComputeTo, nFactorial);
+        Console.ReadLine();
+    }
+}
+

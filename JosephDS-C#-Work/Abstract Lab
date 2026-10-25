@@ -1,0 +1,198 @@
+using System;
+
+public abstract class Transaction  //Syntax part, abstract parent.
+{
+    public string Date;
+    public string Payee;
+    public double Amount;
+    public string Description;
+
+    public abstract void Print(); // No implementation by parent because it is abstract.
+    public abstract void Input(); // No implementation by parent because it is abstract.
+
+}
+
+class Check : Transaction
+{
+    public int CheckNumber;
+   
+    public override void Print()  //implements the Print
+    {
+        Console.WriteLine("-Check-");
+        Console.WriteLine("Check Number : {0}", CheckNumber);
+        Console.WriteLine("Payee        : {0}", Payee);
+        Console.WriteLine("Amount       : {0:C}", -Amount);
+        Console.WriteLine("Description  : {0}", Description);
+    }
+    public override void Input()  //implements the Input
+    {
+        string str;
+
+        Console.Write("Date    :");
+        Date = Console.ReadLine();
+
+        Console.Write("Check#    :");
+        str = Console.ReadLine();
+        CheckNumber = int.Parse(str);
+
+        Console.Write("Payee    :");
+        Payee = Console.ReadLine();
+
+        Console.Write("Amount    :");
+        str = Console.ReadLine();
+        Amount = -double.Parse(str);  
+    }
+}
+
+class Withdrawal : Transaction
+{
+    //implements the Print Method
+    public override void Print()
+    {
+        Console.WriteLine("-Withdrawal-");
+        Console.WriteLine("Amount      : {0:C}", -Amount);
+        Console.WriteLine("Description : {0}", Description);
+    }
+    //implements the Input Method
+    public override void Input()
+    {
+        Console.Write("Date    :");
+        Date = Console.ReadLine();
+
+        Console.Write("Amount    :");
+        string str = Console.ReadLine();
+        Amount = -double.Parse(str); //amount is negative for withdrawal
+    }
+}
+
+class Deposit : Transaction
+{
+    public string From;
+
+    //Must Implement the Print Method.
+
+    public override void Print()
+    {
+        Console.WriteLine("-Deposit-");
+        Console.WriteLine("From        : {0}", From);
+        Console.WriteLine("Amount      : {0:C}", Amount);
+        Console.WriteLine("Description : {0}", Description);
+    }
+
+    public override void Input() // implement the Input.
+    {
+        Console.Write("Date    :");
+        Date = Console.ReadLine();
+
+        Console.Write("Source    :");
+        From = Console.ReadLine();
+
+        Console.Write("Amount    :");
+        String str = Console.ReadLine();
+        Amount = double.Parse(str);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        var checkbook = new Transaction[10];
+        var maxTransactions = 0;
+
+        while (true)
+        {
+            Console.Write("B)alance C)heck D)eposit W)ithdrawal L)ist Q)uit:");
+
+            string option = Console.ReadLine();
+
+            switch (option.ToLower())
+            {
+                case "c":
+                    {
+                        var check = new Check();
+
+                        Console.Write("Check Number: ");
+                        string checkNumber = Console.ReadLine();
+
+                        Console.Write("       Payee: ");
+                        string payee = Console.ReadLine();
+
+                        Console.Write("      Amount: ");
+                        string amount = Console.ReadLine();
+
+                        Console.Write(" Description: ");
+                        string description = Console.ReadLine();
+
+                        check.Payee = payee;
+                        check.CheckNumber = int.Parse(checkNumber);
+                        check.Amount = -double.Parse(amount);
+                        check.Description = description;
+
+                        checkbook[maxTransactions++] = check;
+                        break;
+                    }
+                case "d":
+                    {
+                        var deposit = new Deposit();
+
+                        Console.Write("Deposit From: ");
+                        string from = Console.ReadLine();
+
+                        Console.Write("      Amount: ");
+                        string amount = Console.ReadLine();
+
+                        Console.Write(" Description: ");
+                        string description = Console.ReadLine();
+
+                        deposit.From = from;
+                        deposit.Amount = double.Parse(amount);
+                        deposit.Description = description;
+
+                        checkbook[maxTransactions++] = deposit;
+                        break;
+                    }
+                case "w":
+                    {
+                        var withdrawal = new Withdrawal();
+
+                        Console.Write("Withdrawal Amount: ");
+                        string amount = Console.ReadLine();
+
+                        Console.Write("      Description: ");
+                        string description = Console.ReadLine();
+
+                        withdrawal.Amount = -double.Parse(amount);
+                        withdrawal.Description = description;
+
+                        checkbook[maxTransactions++] = withdrawal;
+                        break;
+                    }
+                case "b":
+                    {
+                        var balance = 0.0;
+
+                        for (var index = 0; index < maxTransactions; index++)
+                        {
+                            balance += checkbook[index].Amount;
+                        }
+
+                        Console.WriteLine("Balance is {0:C}", balance);
+                        break;
+                    }
+                case "l":
+                    {
+                        for (var index = 0; index < maxTransactions; index++)
+                        {
+                            checkbook[index].Print();
+                        }
+                        break;
+                    }
+                case "q":
+                    {
+                        return;
+                    }
+            }
+        }
+    }
+}

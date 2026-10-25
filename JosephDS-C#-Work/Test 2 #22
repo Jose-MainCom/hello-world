@@ -1,0 +1,20 @@
+using System;
+class Test
+{
+    static void Main()
+    {
+        int[] X = new int[10] { 0, 1, 4, 9, 16, 0, 0, 0, 0, 0 };
+        int k;
+
+            for (k = 5; k < 10; ++k)
+        {
+            X[k] = k * k;
+        }
+        for (k = 0; k < X.Length; k++)
+        {
+            Console.Write("{0}     ", X[k]);
+            
+        }
+        Console.ReadLine();
+    }
+}

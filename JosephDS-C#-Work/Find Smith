@@ -1,0 +1,21 @@
+using System;
+
+class Lastname
+{
+    static void Main()
+    {
+        Console.Write("Enter a person's full name: ");
+        string str = Console.ReadLine();
+
+        if (str.EndsWith(" Smith") || str.EndsWith(" smith"))// code here
+        {
+            Console.WriteLine("This person is a Smith.");// code here: indicate you found a Smith
+        }
+        else
+        {
+            Console.WriteLine("This person is not a Smith.");// code here: indicate you did not find a Smith
+        }
+
+        Console.ReadLine();
+    }
+}

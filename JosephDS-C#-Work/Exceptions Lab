@@ -1,0 +1,28 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+        Console.Write("Check Number: ");
+        string checkNumber = Console.ReadLine();
+        try 
+        {
+            int.Parse(checkNumber);
+            Console.WriteLine("You entered check #{0}", int.Parse(checkNumber));
+        }
+        catch (FormatException e)
+        {
+            Console.WriteLine("Invalid Input. Please try again.");
+            Console.WriteLine("{0} {1}", e.Data, e.StackTrace);
+            Console.ReadKey();
+        }
+        finally
+        {
+            Console.WriteLine("You entered check #{0}", int.Parse(checkNumber));  
+        }
+
+        Console.ReadLine();
+    }
+}

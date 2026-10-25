@@ -1,0 +1,70 @@
+using System;
+
+class Stack
+{
+    private int[] stack = new int[5];
+    private int sp = 0;
+
+    public void Push(int v)
+    {
+        
+        stack[sp] = v;
+        sp = sp + 1
+
+        //grow stack when full
+        if(sp >= stack.Length)
+        {
+            int x = stack.Length + 5;
+            int[] newstack = new int[x];
+
+            stack.CopyTo(newstack, 0);
+            stack = newstack;
+        }
+    }
+
+    public int Pop()
+    {
+        return stack[--sp];
+    }
+
+    public int Top
+    {
+        get
+        {
+            return stack[sp - 1];
+        }
+    }
+
+    public bool IsEmpty
+    {
+        get
+        {
+            return sp == 0;
+        }
+    }
+}
+
+class Arrays_Stacks
+{
+    static void Main()
+    {
+        var stack = new Stack();
+
+        stack.Push(5);
+        stack.Push(3);
+        stack.Push(2);
+        stack.Push(9);
+        stack.Push(10);
+        stack.Push(11);
+
+        Console.WriteLine("The last value pushed was {0}", stack.Top);
+
+        while (!stack.IsEmpty)
+        {
+            Console.WriteLine("Popping {0}", stack.Pop());
+        }
+
+        Console.Write("Press Enter...");
+        Console.ReadLine();
+    }
+}

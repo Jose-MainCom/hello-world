@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practice20
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int X = 4;
+
+            int f = X + X++;
+
+            int g = --X + X;
+
+            
+
+            Console.WriteLine("The value of f is {0}, and the value of g is {1}", f, g);
+           
+            Console.ReadLine();
+        }
+    }
+}
